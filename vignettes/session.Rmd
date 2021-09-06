@@ -1,0 +1,31 @@
+---
+title: "multiNorm: Session"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{multiNorm: Session}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(multiNorm)
+```
+
+# Session
+
+```{r}
+sessionInfo()
+```
+
+# Packages
+
+```{r}
+unname(installed.packages()[, 1])
+```

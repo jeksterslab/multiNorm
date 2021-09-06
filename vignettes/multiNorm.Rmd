@@ -1,0 +1,18 @@
+---
+title: "multiNorm: Multivariate Normal Distribution"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{multiNorm: Multivariate Normal Distribution}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+A collection of functions
+related to the multivariate normal distribution.

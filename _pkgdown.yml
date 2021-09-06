@@ -1,0 +1,13 @@
+destination: docs
+url: https://github.com/jeksterslab/multiNorm/
+
+reference:
+- title: Package
+  contents:
+  - has_keyword("package")
+- title: Multivariate Normal Distribution
+  contents:
+  - has_concept("Multivariate Normal Distribution")
+- title: Linear Algebra Functions
+  contents:
+  - has_concept("Linear Algebra")

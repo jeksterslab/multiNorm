@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{rmvn\_chol}
+\author{Ivan Jacob Agaloos Pesigan}
+
+\begin{document}
+
+\maketitle
+
+<<echo=FALSE>>=
+root <- rprojroot::is_rstudio_project
+source(
+  root$find_file(
+    "latex",
+    "R_scripts",
+    "start.R"
+  )
+)
+@
+
+<<>>=
+set.seed(42)
+n_i <- 1000000
+k_i <- sample(x = 2:10, size = 1)
+mu_i <- rep(x = 0, times = k_i)
+rho_i <- runif(n = 1, min = -1, max = 1)
+sigmacap_i <- matrix(
+  data = rho_i,
+  nrow = k_i,
+  ncol = k_i
+)
+diag(sigmacap_i) <- 1
+mu_i
+sigmacap_i
+data_i <- rmvn_chol(
+  n = n_i,
+  mu = mu_i,
+  sigmacap = sigmacap_i
+)
+colMeans(data_i)
+cov(data_i)
+@
+
+<<>>=
+theta_i <- c(
+  mu_i,
+  vech(sigmacap_i)
+)
+data_i <- rmvn_chol_of_theta(n = n_i, x = theta_i)
+colMeans(data_i)
+cov(data_i)
+@
+
+\end{document}
