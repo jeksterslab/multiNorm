@@ -1,6 +1,6 @@
 #' Generate Sample Covariances from the Wishart Distribution
 #' -
-#' \eqn{ \mathrm{vech} \left( \boldsymbol{\Sigma} \right)}
+#' Half-Vectorization of the Covariance Matrix Input
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -16,10 +16,10 @@
 #' @param vector Logical.
 #'   If `vector = TRUE`,
 #'   returns the half-vectorization of the covariance matrix
-#'   for each `n` variate.
+#'   for each `R` variate.
 #'   If `vector = FALSE`,
 #'   returns the covariance matrix
-#'   for each `n` variate.
+#'   for each `R` variate.
 #'
 #' @details
 #' # Dependencies

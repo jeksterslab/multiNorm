@@ -14,10 +14,10 @@
 #' @param vector Logical.
 #'   If `vector = TRUE`,
 #'   returns the half-vectorization of the covariance matrix
-#'   for each `n` variate.
+#'   for each `R` variate.
 #'   If `vector = FALSE`,
 #'   returns the covariance matrix
-#'   for each `n` variate.
+#'   for each `R` variate.
 #'
 #' @returns A list (`vector = FALSE`) or matrix (`vector = TRUE`).
 #'

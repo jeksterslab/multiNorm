@@ -1,7 +1,7 @@
 #' Generate Data from the Multivariate Normal Distribution
 #' Using the Cholesky Decomposition
 #' -
-#' \eqn{\mathrm{vechs} \left( \mathbf{P} \right)}
+#' Strict Half-Vectorization of the Correlation Matrix Input
 #'
 #' @details
 #' # Dependencies
