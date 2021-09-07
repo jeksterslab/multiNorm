@@ -2,11 +2,9 @@
 % Please edit documentation in R/multiNorm-rmvn_chol_of_rhocap.R
 \name{rmvn_chol_of_rhocap}
 \alias{rmvn_chol_of_rhocap}
-\title{\subsection{Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition}{
-
-Correlation Matrix Input
-}}
+\title{Generate Data
+from the Multivariate Normal Distribution
+Using the Cholesky Decomposition - Correlation Matrix Input}
 \usage{
 rmvn_chol_of_rhocap(n, x, varnames = NULL, data_frame = FALSE)
 }
@@ -32,11 +30,9 @@ returns a \code{matrix}.}
 A matrix (\code{data_frame = FALSE}) or data.frame (\code{data_frame = TRUE}).
 }
 \description{
-\subsection{Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition}{
-
-Correlation Matrix Input
-}
+Generate Data
+from the Multivariate Normal Distribution
+Using the Cholesky Decomposition - Correlation Matrix Input
 }
 \examples{
 

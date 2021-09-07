@@ -2,10 +2,9 @@
 % Please edit documentation in R/multiNorm-rvcov_wishart_of_vechsigmacap.R
 \name{rvcov_wishart_of_vechsigmacap}
 \alias{rvcov_wishart_of_vechsigmacap}
-\title{\subsection{Generate Sample Covariances from the Wishart Distribution}{
-
-Half-Vectorization of the Covariance Matrix Input
-}}
+\title{Generate Sample Covariances
+from the Wishart Distribution - Half-Vectorization
+of the Covariance Matrix Input}
 \usage{
 rvcov_wishart_of_vechsigmacap(rcap, x, df, vector = FALSE)
 }
@@ -34,10 +33,9 @@ for each \code{R} variate.}
 A list (\code{vector = FALSE}) or matrix (\code{vector = TRUE}).
 }
 \description{
-\subsection{Generate Sample Covariances from the Wishart Distribution}{
-
-Half-Vectorization of the Covariance Matrix Input
-}
+Generate Sample Covariances
+from the Wishart Distribution - Half-Vectorization
+of the Covariance Matrix Input
 }
 \section{Dependencies}{
 \itemize{

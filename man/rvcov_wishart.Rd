@@ -2,7 +2,8 @@
 % Please edit documentation in R/multiNorm-rvcov_wishart.R
 \name{rvcov_wishart}
 \alias{rvcov_wishart}
-\title{Generate Sample Variance-Covariance Matrix from the Wishart Distribution}
+\title{Generate Sample Variance-Covariance Matrix
+from the Wishart Distribution}
 \usage{
 rvcov_wishart(rcap, sigmacap, df, vector = FALSE)
 }
@@ -31,7 +32,8 @@ for each \code{R} variate.}
 A list (\code{vector = FALSE}) or matrix (\code{vector = TRUE}).
 }
 \description{
-Generate Sample Variance-Covariance Matrix from the Wishart Distribution
+Generate Sample Variance-Covariance Matrix
+from the Wishart Distribution
 }
 \examples{
 sigmacap <- matrix(

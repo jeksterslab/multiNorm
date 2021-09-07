@@ -2,7 +2,8 @@
 % Please edit documentation in R/multiNorm-rmvn_chol.R
 \name{rmvn_chol}
 \alias{rmvn_chol}
-\title{Generate Data from the Multivariate Normal Distribution
+\title{Generate Data
+from the Multivariate Normal Distribution
 Using the Cholesky Decomposition}
 \usage{
 rmvn_chol(n, mu, sigmacap, varnames = NULL, data_frame = FALSE)
@@ -34,7 +35,8 @@ returns a \code{matrix}.}
 A matrix (\code{data_frame = FALSE}) or data.frame (\code{data_frame = TRUE}).
 }
 \description{
-Generate Data from the Multivariate Normal Distribution
+Generate Data
+from the Multivariate Normal Distribution
 Using the Cholesky Decomposition
 }
 \examples{
