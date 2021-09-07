@@ -2,8 +2,11 @@
 % Please edit documentation in R/multiNorm-rmvn_chol_of_theta.R
 \name{rmvn_chol_of_theta}
 \alias{rmvn_chol_of_theta}
-\title{Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Theta}
+\title{\subsection{Generate Data from the Multivariate Normal Distribution
+Using the Cholesky Decomposition}{
+
+\eqn{\boldsymbol{\theta}}
+}}
 \usage{
 rmvn_chol_of_theta(n, x, varnames = NULL, data_frame = FALSE)
 }
@@ -14,6 +17,8 @@ rmvn_chol_of_theta(n, x, varnames = NULL, data_frame = FALSE)
 \item{x}{Numeric vector.
 Vector of parameters
 \eqn{
+    \boldsymbol{\theta}
+    =
     \{
       \boldsymbol{\mu}
       \mathrm{vech} \left( \boldsymbol{\Sigma} \right)
@@ -30,11 +35,14 @@ If \code{data_frame = FALSE},
 returns a \code{matrix}.}
 }
 \value{
-A matrix or data.frame.
+A matrix (\code{data_frame = FALSE}) or data.frame (\code{data_frame = TRUE}).
 }
 \description{
-Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Theta
+\subsection{Generate Data from the Multivariate Normal Distribution
+Using the Cholesky Decomposition}{
+
+\eqn{\boldsymbol{\theta}}
+}
 }
 \examples{
 

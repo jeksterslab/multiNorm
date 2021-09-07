@@ -7,7 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Theta — rmvn_chol_of_theta • multiNorm</title>
+Using the Cholesky Decomposition
+
+
+\(\boldsymbol{\theta}\) — rmvn_chol_of_theta • multiNorm</title>
 
 
 <!-- jquery -->
@@ -41,9 +44,17 @@ Using the Cholesky Decomposition - Theta — rmvn_chol_of_theta • multiNorm</t
 
 
 <meta property="og:title" content="Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Theta — rmvn_chol_of_theta" />
-<meta property="og:description" content="Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Theta" />
+Using the Cholesky Decomposition
+
+
+\(\boldsymbol{\theta}\) — rmvn_chol_of_theta" />
+<meta property="og:description" content="
+Generate Data from the Multivariate Normal Distribution
+Using the Cholesky Decomposition
+
+
+\(\boldsymbol{\theta}\)
+" />
 
 
 
@@ -124,15 +135,23 @@ Using the Cholesky Decomposition - Theta" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Theta</h1>
+    <h1><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Generate Data from the Multivariate Normal Distribution
+Using the Cholesky Decomposition</h3>
+
+
+<p>\(\boldsymbol{\theta}\)</p></h1>
     
     <div class="hidden name"><code>rmvn_chol_of_theta.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Theta</p>
+    
+<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Generate Data from the Multivariate Normal Distribution
+Using the Cholesky Decomposition</h3>
+
+
+<p>\(\boldsymbol{\theta}\)</p>
+
     </div>
 
     <pre class="usage"><span class='fu'>rmvn_chol_of_theta</span><span class='op'>(</span><span class='va'>n</span>, <span class='va'>x</span>, varnames <span class='op'>=</span> <span class='cn'>NULL</span>, data_frame <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
@@ -150,6 +169,8 @@ Using the Cholesky Decomposition - Theta</p>
       <td><p>Numeric vector.
 Vector of parameters
 \(
+    \boldsymbol{\theta}
+    =
     \{
       \boldsymbol{\mu}
       \mathrm{vech} \left( \boldsymbol{\Sigma} \right)
@@ -173,7 +194,7 @@ returns a <code>matrix</code>.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A matrix or data.frame.</p>
+    <p>A matrix (<code>data_frame = FALSE</code>) or data.frame (<code>data_frame = TRUE</code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other Multivariate Normal Distribution: 

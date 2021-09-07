@@ -4,19 +4,20 @@
 \alias{rvcov_wishart}
 \title{Generate Sample Variance-Covariance Matrix from the Wishart Distribution}
 \usage{
-rvcov_wishart(n, sigmacap, df, vector = FALSE)
+rvcov_wishart(rcap, sigmacap, df, vector = FALSE)
 }
 \arguments{
-\item{n}{Positive integer.
-\code{n} variates.}
+\item{rcap}{Positive integer.
+\code{R} variates.}
 
 \item{sigmacap}{Numeric matrix.
 Parameter.
-Covariance matrix \eqn{\boldsymbol{\Sigma}}.}
+Covariance matrix
+\eqn{\boldsymbol{\Sigma}}.}
 
 \item{df}{Positive integer.
 Parameter.
-Degrees of freedom}
+Degrees of freedom.}
 
 \item{vector}{Logical.
 If \code{vector = TRUE},
@@ -41,7 +42,7 @@ sigmacap <- matrix(
 )
 
 x <- rvcov_wishart(
-  n = 100,
+  rcap = 100,
   sigmacap = sigmacap,
   df = 100,
   vector = TRUE

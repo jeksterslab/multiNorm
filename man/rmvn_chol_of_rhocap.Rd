@@ -2,8 +2,11 @@
 % Please edit documentation in R/multiNorm-rmvn_chol_of_rhocap.R
 \name{rmvn_chol_of_rhocap}
 \alias{rmvn_chol_of_rhocap}
-\title{Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Rho}
+\title{\subsection{Generate Data from the Multivariate Normal Distribution
+Using the Cholesky Decomposition}{
+
+\eqn{\mathbf{P}}
+}}
 \usage{
 rmvn_chol_of_rhocap(n, x, varnames = NULL, data_frame = FALSE)
 }
@@ -12,7 +15,9 @@ rmvn_chol_of_rhocap(n, x, varnames = NULL, data_frame = FALSE)
 \code{n} variates.}
 
 \item{x}{Numeric matrix.
-Correlation matrix.}
+Parameter.
+Correlation matrix
+\eqn{\mathbf{P}}.}
 
 \item{varnames}{Character vector
 Optional variable names.}
@@ -24,11 +29,14 @@ If \code{data_frame = FALSE},
 returns a \code{matrix}.}
 }
 \value{
-A matrix or data.frame.
+A matrix (\code{data_frame = FALSE}) or data.frame (\code{data_frame = TRUE}).
 }
 \description{
-Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Rho
+\subsection{Generate Data from the Multivariate Normal Distribution
+Using the Cholesky Decomposition}{
+
+\eqn{\mathbf{P}}
+}
 }
 \examples{
 

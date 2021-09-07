@@ -2,19 +2,25 @@
 % Please edit documentation in R/multiNorm-rvcov_wishart_of_vechsigmacap.R
 \name{rvcov_wishart_of_vechsigmacap}
 \alias{rvcov_wishart_of_vechsigmacap}
-\title{Generate Sample Covariances from the Wishart Distribution - vech of Sigma}
+\title{\subsection{Generate Sample Covariances from the Wishart Distribution}{
+
+\eqn{ \mathrm{vech} \left( \boldsymbol{\Sigma} \right)}
+}}
 \usage{
-rvcov_wishart_of_vechsigmacap(n, x, df, vector = FALSE)
+rvcov_wishart_of_vechsigmacap(rcap, x, df, vector = FALSE)
 }
 \arguments{
-\item{n}{Positive integer.
-\code{n} variates.}
+\item{rcap}{Positive integer.
+\code{R} variates.}
 
 \item{x}{Numeric vector.
-Half-vectorization of the covariance matrix.}
+Parameter.
+Half-vectorization of the covariance matrix
+\eqn{ \mathrm{vech} \left( \boldsymbol{\Sigma} \right)}.}
 
 \item{df}{Positive integer.
-Degrees of freesom.}
+Parameter.
+Degrees of freedom.}
 
 \item{vector}{Logical.
 If \code{vector = TRUE},
@@ -28,7 +34,10 @@ for each \code{n} variate.}
 A list (\code{vector = FALSE}) or matrix (\code{vector = TRUE}).
 }
 \description{
-Generate Sample Covariances from the Wishart Distribution - vech of Sigma
+\subsection{Generate Sample Covariances from the Wishart Distribution}{
+
+\eqn{ \mathrm{vech} \left( \boldsymbol{\Sigma} \right)}
+}
 }
 \section{Dependencies}{
 \itemize{
@@ -40,7 +49,7 @@ Generate Sample Covariances from the Wishart Distribution - vech of Sigma
 
 \examples{
 x <- rvcov_wishart_of_vechsigmacap(
-  n = 100,
+  rcap = 100,
   x = c(1, 0.5, 1),
   df = 100,
   vector = TRUE

@@ -130,27 +130,28 @@
     <p>Generate Sample Variance-Covariance Matrix from the Wishart Distribution</p>
     </div>
 
-    <pre class="usage"><span class='fu'>rvcov_wishart</span><span class='op'>(</span><span class='va'>n</span>, <span class='va'>sigmacap</span>, <span class='va'>df</span>, vector <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>rvcov_wishart</span><span class='op'>(</span><span class='va'>rcap</span>, <span class='va'>sigmacap</span>, <span class='va'>df</span>, vector <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>n</th>
+      <th>rcap</th>
       <td><p>Positive integer.
-<code>n</code> variates.</p></td>
+<code>R</code> variates.</p></td>
     </tr>
     <tr>
       <th>sigmacap</th>
       <td><p>Numeric matrix.
 Parameter.
-Covariance matrix \(\boldsymbol{\Sigma}\).</p></td>
+Covariance matrix
+\(\boldsymbol{\Sigma}\).</p></td>
     </tr>
     <tr>
       <th>df</th>
       <td><p>Positive integer.
 Parameter.
-Degrees of freedom</p></td>
+Degrees of freedom.</p></td>
     </tr>
     <tr>
       <th>vector</th>
@@ -188,7 +189,7 @@ for each <code>n</code> variate.</p></td>
 <span class='op'>)</span>
 
 <span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>rvcov_wishart</span><span class='op'>(</span>
-  n <span class='op'>=</span> <span class='fl'>100</span>,
+  rcap <span class='op'>=</span> <span class='fl'>100</span>,
   sigmacap <span class='op'>=</span> <span class='va'>sigmacap</span>,
   df <span class='op'>=</span> <span class='fl'>100</span>,
   vector <span class='op'>=</span> <span class='cn'>TRUE</span>

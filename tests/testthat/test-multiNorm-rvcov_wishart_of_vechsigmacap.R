@@ -2,7 +2,7 @@
 tol_i <- 0.01
 k_i <- sample(x = 2:10, size = 1)
 data_i <- rvcov_wishart_of_vechsigmacap(
-  n = 10000,
+  rcap = 10000,
   x = vech(toeplitz((k_i:1) / k_i)),
   df = 10000,
   vector = TRUE
@@ -20,7 +20,7 @@ testthat::test_that("means", {
 })
 # coverage
 data_i <- rvcov_wishart_of_vechsigmacap(
-  n = 10000,
+  rcap = 10000,
   x = vech(toeplitz((k_i:1) / k_i)),
   df = 10000,
   vector = FALSE

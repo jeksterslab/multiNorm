@@ -2,8 +2,11 @@
 % Please edit documentation in R/multiNorm-rmvn_chol_of_vechsrhocap.R
 \name{rmvn_chol_of_vechsrhocap}
 \alias{rmvn_chol_of_vechsrhocap}
-\title{Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - vechs of Rho}
+\title{\subsection{Generate Data from the Multivariate Normal Distribution
+Using the Cholesky Decomposition}{
+
+\eqn{\mathrm{vechs} \left( \mathbf{P} \right)}
+}}
 \usage{
 rmvn_chol_of_vechsrhocap(n, x, varnames = NULL, data_frame = FALSE)
 }
@@ -12,8 +15,10 @@ rmvn_chol_of_vechsrhocap(n, x, varnames = NULL, data_frame = FALSE)
 \code{n} variates.}
 
 \item{x}{Numeric vector.
+Parameter.
 Strict half-vectorization
-of the correlation matrix.}
+of the correlation matrix
+\eqn{\mathrm{vechs} \left( \mathbf{P} \right)}.}
 
 \item{varnames}{Character vector
 Optional variable names.}
@@ -25,11 +30,14 @@ If \code{data_frame = FALSE},
 returns a \code{matrix}.}
 }
 \value{
-A matrix or data.frame.
+A matrix (\code{data_frame = FALSE}) or data.frame (\code{data_frame = TRUE}).
 }
 \description{
-Generate Data from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - vechs of Rho
+\subsection{Generate Data from the Multivariate Normal Distribution
+Using the Cholesky Decomposition}{
+
+\eqn{\mathrm{vechs} \left( \mathbf{P} \right)}
+}
 }
 \section{Dependencies}{
 \itemize{

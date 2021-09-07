@@ -12,10 +12,14 @@ rmvn_chol(n, mu, sigmacap, varnames = NULL, data_frame = FALSE)
 \code{n} variates.}
 
 \item{mu}{Numeric vector.
-Mean vector.}
+Parameter.
+Mean vector
+\eqn{\boldsymbol{\mu}}.}
 
 \item{sigmacap}{Numeric matrix.
-Covariance matrix.}
+Parameter.
+Covariance matrix
+\eqn{\boldsymbol{\Sigma}}.}
 
 \item{varnames}{Character vector
 Optional variable names.}
@@ -27,7 +31,7 @@ If \code{data_frame = FALSE},
 returns a \code{matrix}.}
 }
 \value{
-A matrix or data.frame.
+A matrix (\code{data_frame = FALSE}) or data.frame (\code{data_frame = TRUE}).
 }
 \description{
 Generate Data from the Multivariate Normal Distribution
