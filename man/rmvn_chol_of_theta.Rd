@@ -4,7 +4,7 @@
 \alias{rmvn_chol_of_theta}
 \title{Generate Data
 from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Vector theta Input}
+Using the Cholesky Decomposition - Parameter Vector theta Input}
 \usage{
 rmvn_chol_of_theta(n, x, varnames = NULL, data_frame = FALSE)
 }
@@ -38,7 +38,7 @@ A matrix (\code{data_frame = FALSE}) or data.frame (\code{data_frame = TRUE}).
 \description{
 Generate Data
 from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Vector theta Input
+Using the Cholesky Decomposition - Parameter Vector theta Input
 }
 \examples{
 

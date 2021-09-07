@@ -28,6 +28,3 @@
 ^.\.R$
 ^.\.sh$
 ^.*\.Rproj$
-^multiNorm\.Rcheck$
-^multiNorm.*\.tar\.gz$
-^multiNorm.*\.tgz$
