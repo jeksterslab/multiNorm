@@ -1,6 +1,6 @@
 #' Generate Data
 #' from the Multivariate Normal Distribution
-#' Using the Cholesky Decomposition - Vector theta Input
+#' Using the Cholesky Decomposition - Parameter Vector theta Input
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
