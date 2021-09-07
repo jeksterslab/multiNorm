@@ -1,6 +1,6 @@
-#' Generate Sample Covariances from the Wishart Distribution
-#' -
-#' Half-Vectorization of the Covariance Matrix Input
+#' Generate Sample Covariances
+#' from the Wishart Distribution - Half-Vectorization
+#' of the Covariance Matrix Input
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'

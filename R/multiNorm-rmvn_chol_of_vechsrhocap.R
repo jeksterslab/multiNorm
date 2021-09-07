@@ -1,7 +1,7 @@
-#' Generate Data from the Multivariate Normal Distribution
-#' Using the Cholesky Decomposition
-#' -
-#' Strict Half-Vectorization of the Correlation Matrix Input
+#' Generate Data
+#' from the Multivariate Normal Distribution
+#' Using the Cholesky Decomposition - Strict Half-Vectorization
+#' of the Correlation Matrix Input
 #'
 #' @details
 #' # Dependencies

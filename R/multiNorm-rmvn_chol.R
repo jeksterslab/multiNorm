@@ -1,4 +1,5 @@
-#' Generate Data from the Multivariate Normal Distribution
+#' Generate Data
+#' from the Multivariate Normal Distribution
 #' Using the Cholesky Decomposition
 #'
 #' @author Ivan Jacob Agaloos Pesigan

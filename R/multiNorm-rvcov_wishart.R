@@ -1,4 +1,5 @@
-#' Generate Sample Variance-Covariance Matrix from the Wishart Distribution
+#' Generate Sample Variance-Covariance Matrix
+#' from the Wishart Distribution
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'

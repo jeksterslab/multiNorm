@@ -1,7 +1,6 @@
-#' Generate Data from the Multivariate Normal Distribution
-#' Using the Cholesky Decomposition
-#' -
-#' Correlation Matrix Input
+#' Generate Data
+#' from the Multivariate Normal Distribution
+#' Using the Cholesky Decomposition - Correlation Matrix Input
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
