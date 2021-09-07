@@ -22,10 +22,10 @@ Degrees of freedom.}
 \item{vector}{Logical.
 If \code{vector = TRUE},
 returns the half-vectorization of the covariance matrix
-for each \code{n} variate.
+for each \code{R} variate.
 If \code{vector = FALSE},
 returns the covariance matrix
-for each \code{n} variate.}
+for each \code{R} variate.}
 }
 \value{
 A list (\code{vector = FALSE}) or matrix (\code{vector = TRUE}).

@@ -4,7 +4,7 @@
 \alias{rvcov_wishart_of_vechsigmacap}
 \title{\subsection{Generate Sample Covariances from the Wishart Distribution}{
 
-\eqn{ \mathrm{vech} \left( \boldsymbol{\Sigma} \right)}
+Half-Vectorization of the Covariance Matrix Input
 }}
 \usage{
 rvcov_wishart_of_vechsigmacap(rcap, x, df, vector = FALSE)
@@ -25,10 +25,10 @@ Degrees of freedom.}
 \item{vector}{Logical.
 If \code{vector = TRUE},
 returns the half-vectorization of the covariance matrix
-for each \code{n} variate.
+for each \code{R} variate.
 If \code{vector = FALSE},
 returns the covariance matrix
-for each \code{n} variate.}
+for each \code{R} variate.}
 }
 \value{
 A list (\code{vector = FALSE}) or matrix (\code{vector = TRUE}).
@@ -36,7 +36,7 @@ A list (\code{vector = FALSE}) or matrix (\code{vector = TRUE}).
 \description{
 \subsection{Generate Sample Covariances from the Wishart Distribution}{
 
-\eqn{ \mathrm{vech} \left( \boldsymbol{\Sigma} \right)}
+Half-Vectorization of the Covariance Matrix Input
 }
 }
 \section{Dependencies}{

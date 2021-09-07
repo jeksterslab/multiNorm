@@ -5,7 +5,7 @@
 \title{\subsection{Generate Data from the Multivariate Normal Distribution
 Using the Cholesky Decomposition}{
 
-\eqn{\mathbf{P}}
+Correlation Matrix Input
 }}
 \usage{
 rmvn_chol_of_rhocap(n, x, varnames = NULL, data_frame = FALSE)
@@ -35,7 +35,7 @@ A matrix (\code{data_frame = FALSE}) or data.frame (\code{data_frame = TRUE}).
 \subsection{Generate Data from the Multivariate Normal Distribution
 Using the Cholesky Decomposition}{
 
-\eqn{\mathbf{P}}
+Correlation Matrix Input
 }
 }
 \examples{
