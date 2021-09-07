@@ -1,13 +1,18 @@
-#' Generate Sample Covariances from the Wishart Distribution - vech of Sigma
+#' Generate Sample Covariances from the Wishart Distribution
+#' -
+#' \eqn{ \mathrm{vech} \left( \boldsymbol{\Sigma} \right)}
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @param n Positive integer.
-#'   `n` variates.
+#' @param rcap Positive integer.
+#'   `R` variates.
 #' @param x Numeric vector.
-#'   Half-vectorization of the covariance matrix.
+#'   Parameter.
+#'   Half-vectorization of the covariance matrix
+#'   \eqn{ \mathrm{vech} \left( \boldsymbol{\Sigma} \right)}.
 #' @param df Positive integer.
-#'   Degrees of freesom.
+#'   Parameter.
+#'   Degrees of freedom.
 #' @param vector Logical.
 #'   If `vector = TRUE`,
 #'   returns the half-vectorization of the covariance matrix
@@ -26,7 +31,7 @@
 #'
 #' @examples
 #' x <- rvcov_wishart_of_vechsigmacap(
-#'   n = 100,
+#'   rcap = 100,
 #'   x = c(1, 0.5, 1),
 #'   df = 100,
 #'   vector = TRUE
@@ -36,23 +41,23 @@
 #' @export
 #' @family Multivariate Normal Distribution
 #' @keywords multiNorm
-rvcov_wishart_of_vechsigmacap <- function(n,
+rvcov_wishart_of_vechsigmacap <- function(rcap,
                                           x,
                                           df,
                                           vector = FALSE) {
   stopifnot(
     is.vector(x),
-    is.vector(n),
+    is.vector(rcap),
     is.vector(df),
     is.logical(vector),
-    length(n) == 1,
+    length(rcap) == 1,
     length(df) == 1,
     length(vector) == 1
   )
   sigmacap <- sym_of_vech(x)
-  n <- as.integer(n)
+  rcap <- as.integer(rcap)
   output <- stats::rWishart(
-    n = n,
+    n = rcap,
     df = df,
     Sigma = sigmacap
   )
@@ -75,7 +80,7 @@ rvcov_wishart_of_vechsigmacap <- function(n,
     }
   }
   output <- lapply(
-    X = seq_len(n),
+    X = seq_len(rcap),
     FUN = foo
   )
   if (vector) {

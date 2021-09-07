@@ -6,9 +6,13 @@
 #' @param n Positive integer.
 #'   `n` variates.
 #' @param mu Numeric vector.
-#'   Mean vector.
+#'   Parameter.
+#'   Mean vector
+#'   \eqn{\boldsymbol{\mu}}.
 #' @param sigmacap Numeric matrix.
-#'   Covariance matrix.
+#'   Parameter.
+#'   Covariance matrix
+#'   \eqn{\boldsymbol{\Sigma}}.
 #' @param varnames Character vector
 #'   Optional variable names.
 #' @param data_frame Logical.
@@ -17,7 +21,7 @@
 #'   If `data_frame = FALSE`,
 #'   returns a `matrix`.
 #'
-#' @returns A matrix or data.frame.
+#' @returns A matrix (`data_frame = FALSE`) or data.frame (`data_frame = TRUE`).
 #'
 #' @examples
 #' mu <- c(100, 100)

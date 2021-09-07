@@ -1,5 +1,7 @@
 #' Generate Data from the Multivariate Normal Distribution
-#' Using the Cholesky Decomposition - Theta
+#' Using the Cholesky Decomposition
+#' -
+#' \eqn{\boldsymbol{\theta}}
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -8,6 +10,8 @@
 #' @param x Numeric vector.
 #'   Vector of parameters
 #'   \eqn{
+#'     \boldsymbol{\theta}
+#'     =
 #'     \{
 #'       \boldsymbol{\mu}
 #'       \mathrm{vech} \left( \boldsymbol{\Sigma} \right)
@@ -21,7 +25,7 @@
 #'   If `data_frame = FALSE`,
 #'   returns a `matrix`.
 #'
-#' @returns A matrix or data.frame.
+#' @returns A matrix (`data_frame = FALSE`) or data.frame (`data_frame = TRUE`).
 #'
 #' @examples
 #'

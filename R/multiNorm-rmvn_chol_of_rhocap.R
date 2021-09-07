@@ -1,12 +1,16 @@
 #' Generate Data from the Multivariate Normal Distribution
-#' Using the Cholesky Decomposition - Rho
+#' Using the Cholesky Decomposition
+#' -
+#' \eqn{\mathbf{P}}
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param n Positive integer.
 #'   `n` variates.
 #' @param x Numeric matrix.
-#'   Correlation matrix.
+#'   Parameter.
+#'   Correlation matrix
+#'   \eqn{\mathbf{P}}.
 #' @param varnames Character vector
 #'   Optional variable names.
 #' @param data_frame Logical.
@@ -15,7 +19,7 @@
 #'   If `data_frame = FALSE`,
 #'   returns a `matrix`.
 #'
-#' @returns A matrix or data.frame.
+#' @returns A matrix (`data_frame = FALSE`) or data.frame (`data_frame = TRUE`).
 #'
 #' @examples
 #'

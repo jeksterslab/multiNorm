@@ -1,13 +1,23 @@
 #' Generate Data from the Multivariate Normal Distribution
-#' Using the Cholesky Decomposition - vechs of Rho
+#' Using the Cholesky Decomposition
+#' -
+#' \eqn{\mathrm{vechs} \left( \mathbf{P} \right)}
+#'
+#' @details
+#' # Dependencies
+#' * [sym_of_vechs()]
+#' * [vechs()] (test)
+#' * [vechsnames()] (test)
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @param n Positive integer.
 #'   `n` variates.
 #' @param x Numeric vector.
+#'   Parameter.
 #'   Strict half-vectorization
-#'   of the correlation matrix.
+#'   of the correlation matrix
+#'   \eqn{\mathrm{vechs} \left( \mathbf{P} \right)}.
 #' @param varnames Character vector
 #'   Optional variable names.
 #' @param data_frame Logical.
@@ -16,13 +26,7 @@
 #'   If `data_frame = FALSE`,
 #'   returns a `matrix`.
 #'
-#' @details
-#' # Dependencies
-#' * [sym_of_vechs()]
-#' * [vechs()] (test)
-#' * [vechsnames()] (test)
-#'
-#' @returns A matrix or data.frame.
+#' @returns A matrix (`data_frame = FALSE`) or data.frame (`data_frame = TRUE`).
 #'
 #' @examples
 #'
