@@ -35,7 +35,7 @@ vechnames(colnames(x))
 \href{https://en.wikipedia.org/wiki/Vectorization_(mathematics)#Half-vectorization}{Wikipedia: Half-vectorization}
 }
 \seealso{
-Other Linear Algebra: 
+Other Linear Algebra Functions: 
 \code{\link{sym_of_vechs}()},
 \code{\link{sym_of_vech}()},
 \code{\link{vechsnames}()},
@@ -45,7 +45,7 @@ Other Linear Algebra:
 \author{
 Ivan Jacob Agaloos Pesigan
 }
-\concept{Linear Algebra}
+\concept{Linear Algebra Functions}
 \keyword{linearAlgebra}
 \keyword{symmetric}
 \keyword{vectorization}

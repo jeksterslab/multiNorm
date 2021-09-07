@@ -58,7 +58,7 @@ colMeans(x)
 cov(x)
 }
 \seealso{
-Other Multivariate Normal Distribution: 
+Other Multivariate Normal Distribution Functions: 
 \code{\link{rmvn_chol_of_rhocap}()},
 \code{\link{rmvn_chol_of_theta}()},
 \code{\link{rmvn_chol_of_vechsrhocap}()},
@@ -68,5 +68,5 @@ Other Multivariate Normal Distribution:
 \author{
 Ivan Jacob Agaloos Pesigan
 }
-\concept{Multivariate Normal Distribution}
+\concept{Multivariate Normal Distribution Functions}
 \keyword{multiNorm}
