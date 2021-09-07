@@ -36,7 +36,7 @@
 #'
 #' vechs(x)
 #' @export
-#' @family Linear Algebra
+#' @family Linear Algebra Functions
 #' @keywords linearAlgebra symmetric vectorization
 vechs <- function(x,
                   names = FALSE,

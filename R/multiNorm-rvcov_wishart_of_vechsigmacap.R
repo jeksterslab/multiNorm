@@ -39,7 +39,7 @@
 #'
 #' colMeans(x)
 #' @export
-#' @family Multivariate Normal Distribution
+#' @family Multivariate Normal Distribution Functions
 #' @keywords multiNorm
 rvcov_wishart_of_vechsigmacap <- function(rcap,
                                           x,

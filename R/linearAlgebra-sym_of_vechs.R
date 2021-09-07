@@ -30,7 +30,7 @@
 #'
 #' sym_of_vechs(vechsA, diags = 1)
 #' @export
-#' @family Linear Algebra
+#' @family Linear Algebra Functions
 #' @keywords linearAlgebra symmetric
 sym_of_vechs <- function(x, diags) {
   # m = m by m dimensions of the symmetric matrix

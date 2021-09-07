@@ -27,7 +27,7 @@
 #'
 #' sym_of_vech(vechA)
 #' @export
-#' @family Linear Algebra
+#' @family Linear Algebra Functions
 #' @keywords linearAlgebra symmetric
 sym_of_vech <- function(x) {
   # m = m by m dimensions of the symmetric matrix

@@ -36,7 +36,7 @@
 #' colMeans(x)
 #' cov(x)
 #' @export
-#' @family Multivariate Normal Distribution
+#' @family Multivariate Normal Distribution Functions
 #' @keywords multiNorm
 rmvn_chol_of_theta <- function(n,
                                x,

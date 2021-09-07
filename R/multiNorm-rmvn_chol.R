@@ -42,7 +42,7 @@
 #' colMeans(x)
 #' cov(x)
 #' @export
-#' @family Multivariate Normal Distribution
+#' @family Multivariate Normal Distribution Functions
 #' @keywords multiNorm
 rmvn_chol <- function(n,
                       mu,

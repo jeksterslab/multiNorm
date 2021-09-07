@@ -19,7 +19,7 @@
 #' colnames(x) <- rownames(x) <- c("x1", "x2", "x3")
 #' vechsnames(colnames(x))
 #' @export
-#' @family Linear Algebra
+#' @family Linear Algebra Functions
 #' @keywords linearAlgebra symmetric vectorization
 vechsnames <- function(x,
                        sep = ".") {
