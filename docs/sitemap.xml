@@ -7,6 +7,12 @@
     <loc>https://github.com/jeksterslab/multiNorm//reference/multiNorm.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/rmeans_mvn_chol.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/rmeans_mvn_chol_of_theta.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/rmvn_chol.html</loc>
   </url>
   <url>
@@ -44,6 +50,15 @@
   </url>
   <url>
     <loc>https://github.com/jeksterslab/multiNorm//articles/multiNorm.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//articles/rmeans_mvn_chol.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//articles/rmvn_chol.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//articles/rvcov_wishart.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/multiNorm//articles/session.html</loc>

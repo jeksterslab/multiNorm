@@ -41,7 +41,6 @@ from the Multivariate Normal Distribution
 Using the Cholesky Decomposition - Parameter Vector theta Input
 }
 \examples{
-
 x <- rmvn_chol_of_theta(
   n = 100,
   x = c(0, 0, 1, 0.5, 1)
@@ -52,6 +51,8 @@ cov(x)
 }
 \seealso{
 Other Multivariate Normal Distribution Functions: 
+\code{\link{rmeans_mvn_chol_of_theta}()},
+\code{\link{rmeans_mvn_chol}()},
 \code{\link{rmvn_chol_of_rhocap}()},
 \code{\link{rmvn_chol_of_vechsrhocap}()},
 \code{\link{rmvn_chol}()},

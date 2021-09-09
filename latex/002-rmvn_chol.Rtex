@@ -7,7 +7,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 
-\title{rmvn\_chol}
+\title{Generating Multivariate Normal Data Using the Cholesky Decomposition}
 \author{Ivan Jacob Agaloos Pesigan}
 
 \begin{document}
@@ -25,6 +25,15 @@ source(
 )
 @
 
+The multivariate normal distribution is given by
+
+\input{latex/equations/mvn}
+
+Multivariate normal data can be generated
+using
+
+\input{latex/equations/rmvn_chol}
+
 <<>>=
 set.seed(42)
 n_i <- 1000000
@@ -37,8 +46,19 @@ sigmacap_i <- matrix(
   ncol = k_i
 )
 diag(sigmacap_i) <- 1
+vech_i <- vech(sigmacap_i)
+rhocap_i <- cov2cor(sigmacap_i)
+vechs_i <- vechs(rhocap_i)
 mu_i
 sigmacap_i
+vech_i
+rhocap_i
+vechs_i
+@
+
+\section{rmvn\_chol}
+
+<<>>=
 data_i <- rmvn_chol(
   n = n_i,
   mu = mu_i,
@@ -48,14 +68,56 @@ colMeans(data_i)
 cov(data_i)
 @
 
+\section{rmvn\_theta}
+
 <<>>=
 theta_i <- c(
   mu_i,
   vech(sigmacap_i)
 )
-data_i <- rmvn_chol_of_theta(n = n_i, x = theta_i)
+data_i <- rmvn_chol_of_theta(
+  n = n_i,
+  x = theta_i
+)
 colMeans(data_i)
 cov(data_i)
+@
+
+\section{rmvn\_chol\_of\_rhocap}
+
+<<>>=
+data_i <- rmvn_chol_of_rhocap(
+  n = n_i,
+  x = rhocap_i
+)
+colMeans(data_i)
+cov(data_i)
+@
+
+\section{rmvn\_chol\_of\_vechsrhocap}
+
+<<>>=
+data_i <- rmvn_chol_of_vechsrhocap(
+  n = n_i,
+  x = vechs_i
+)
+colMeans(data_i)
+cov(data_i)
+@
+
+<<echo = FALSE>>=
+rm(
+  k_i,
+  n_i,
+  mu_i,
+  rho_i,
+  sigmacap_i,
+  vech_i,
+  rhocap_i,
+  vechs_i,
+  theta_i,
+  data_i
+)
 @
 
 \end{document}

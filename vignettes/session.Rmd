@@ -1,5 +1,6 @@
 ---
 title: "multiNorm: Session"
+author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{multiNorm: Session}

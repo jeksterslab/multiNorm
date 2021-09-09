@@ -1,27 +1,36 @@
 ## ---- test-multiNorm-rmvn_chol_of_vechsrhocap
-tol_i <- 0.01
+tol_i <- 0.05
 k_i <- sample(x = 2:10, size = 1)
 data_i <- rmvn_chol_of_vechsrhocap(
-  n = 1000000,
+  n = 10000,
   x = vechs(toeplitz((k_i:1) / k_i))
 )
-testthat::test_that("means", {
+testthat::test_that("multiNorm-rmvn_chol_of_vechsrhocap means", {
   testthat::expect_true(
     all(
       abs(
-        colMeans(data_i) - 0
+        round(
+          colMeans(data_i),
+          digits = 0
+        ) - 0
       ) <= tol_i
     )
   )
 })
-testthat::test_that("covariances", {
+testthat::test_that("multiNorm-rmvn_chol_of_vechsrhocap covariances", {
   testthat::expect_true(
     all(
       abs(
-        as.vector(
-          cov(data_i)
-        ) - as.vector(
-          toeplitz((k_i:1) / k_i)
+        round(
+          as.vector(
+            cov(data_i)
+          ),
+          digits = 2
+        ) - round(
+          as.vector(
+            toeplitz((k_i:1) / k_i)
+          ),
+          digits = 2
         )
       ) <= tol_i
     )
@@ -29,7 +38,7 @@ testthat::test_that("covariances", {
 })
 # coverage
 data_i <- rmvn_chol_of_vechsrhocap(
-  n = 1000000,
+  n = 10,
   x = vechs(toeplitz((k_i:1) / k_i)),
   varnames = paste0("x", seq_len(k_i)),
   data_frame = TRUE

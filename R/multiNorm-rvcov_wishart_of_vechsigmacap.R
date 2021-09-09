@@ -4,22 +4,11 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @param rcap Positive integer.
-#'   `R` variates.
 #' @param x Numeric vector.
 #'   Parameter.
 #'   Half-vectorization of the covariance matrix
 #'   \eqn{ \mathrm{vech} \left( \boldsymbol{\Sigma} \right)}.
-#' @param df Positive integer.
-#'   Parameter.
-#'   Degrees of freedom.
-#' @param vector Logical.
-#'   If `vector = TRUE`,
-#'   returns the half-vectorization of the covariance matrix
-#'   for each `R` variate.
-#'   If `vector = FALSE`,
-#'   returns the covariance matrix
-#'   for each `R` variate.
+#' @inheritParams rvcov_wishart
 #'
 #' @details
 #' # Dependencies

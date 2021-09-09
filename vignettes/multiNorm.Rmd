@@ -1,5 +1,6 @@
 ---
 title: "multiNorm: Multivariate Normal Distribution"
+author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{multiNorm: Multivariate Normal Distribution}

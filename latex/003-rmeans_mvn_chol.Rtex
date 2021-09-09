@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{Generating Sample Mean Vectors from the Multivariate Normal Distribution Using the Cholesky Decomposition}
+\author{Ivan Jacob Agaloos Pesigan}
+
+\begin{document}
+
+\maketitle
+
+<<echo=FALSE>>=
+root <- rprojroot::is_rstudio_project
+source(
+  root$find_file(
+    "latex",
+    "R_scripts",
+    "start.R"
+  )
+)
+@
+
+The multivariate normal distribution is given by
+
+\input{latex/equations/mvn}
+
+When data is randomly sampled from the multivariate normal distribution,
+the sample mean vector $\bar{\mathbf{x}}_{n}$,
+where $n$ is the sample size,
+is given by
+
+\input{latex/equations/means_mvn}
+
+Sample means can be generated from the multivariate normal distribution
+using Equation \ref{eq:means-mvn}.
+
+<<>>=
+set.seed(42)
+n_i <- 1000
+rcap_i <- 10
+k_i <- sample(x = 2:10, size = 1)
+mu_i <- rep(x = 0, times = k_i)
+sigmacap_i <- toeplitz((k_i:1) / k_i)
+theta_i <- c(
+  mu_i,
+  vech(sigmacap_i)
+)
+mu_i
+sigmacap_i
+sigmacap_i / n_i
+theta_i
+@
+
+\section{rmeans\_mvn\_chol}
+
+<<>>=
+data_i <- rmeans_mvn_chol(
+  rcap = rcap_i,
+  mu = mu_i,
+  sigmacap = sigmacap_i,
+  n = n_i
+)
+data_i
+colMeans(data_i)
+cov(data_i)
+@
+
+\section{rmeans\_mvn\_chol\_of\_theta}
+
+<<>>=
+data_i <- rmeans_mvn_chol_of_theta(
+  rcap = rcap_i,
+  x = theta_i,
+  n = n_i
+)
+data_i
+colMeans(data_i)
+cov(data_i)
+@
+
+<<echo = FALSE>>=
+rm(
+  data_i,
+  k_i,
+  mu_i,
+  n_i,
+  rcap_i,
+  sigmacap_i,
+  theta_i
+)
+@
+
+
+\end{document}

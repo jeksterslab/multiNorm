@@ -57,6 +57,8 @@ colMeans(x)
 }
 \seealso{
 Other Multivariate Normal Distribution Functions: 
+\code{\link{rmeans_mvn_chol_of_theta}()},
+\code{\link{rmeans_mvn_chol}()},
 \code{\link{rmvn_chol_of_rhocap}()},
 \code{\link{rmvn_chol_of_theta}()},
 \code{\link{rmvn_chol_of_vechsrhocap}()},

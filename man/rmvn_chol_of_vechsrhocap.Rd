@@ -46,7 +46,6 @@ of the Correlation Matrix Input
 }
 
 \examples{
-
 x <- rmvn_chol_of_vechsrhocap(
   n = 100,
   x = 0.5
@@ -57,6 +56,8 @@ cov(x)
 }
 \seealso{
 Other Multivariate Normal Distribution Functions: 
+\code{\link{rmeans_mvn_chol_of_theta}()},
+\code{\link{rmeans_mvn_chol}()},
 \code{\link{rmvn_chol_of_rhocap}()},
 \code{\link{rmvn_chol_of_theta}()},
 \code{\link{rmvn_chol}()},

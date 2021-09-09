@@ -104,6 +104,15 @@ Using the Cholesky Decomposition" />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/rmeans_mvn_chol.html">Generating Sample Mean Vectors from the Multivariate Normal Distribution Using the Cholesky Decomposition</a>
+    </li>
+    <li>
+      <a href="../articles/rmvn_chol.html">Generating Multivariate Normal Data Using the Cholesky Decomposition</a>
+    </li>
+    <li>
+      <a href="../articles/rvcov_wishart.html">Generating Sample Covariance Matrices from the Wishart Distribution</a>
+    </li>
+    <li>
       <a href="../articles/session.html">multiNorm: Session</a>
     </li>
   </ul>
@@ -185,6 +194,8 @@ returns a <code>matrix</code>.</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other Multivariate Normal Distribution Functions: 
+<code><a href='rmeans_mvn_chol_of_theta.html'>rmeans_mvn_chol_of_theta</a>()</code>,
+<code><a href='rmeans_mvn_chol.html'>rmeans_mvn_chol</a>()</code>,
 <code><a href='rmvn_chol_of_rhocap.html'>rmvn_chol_of_rhocap</a>()</code>,
 <code><a href='rmvn_chol_of_theta.html'>rmvn_chol_of_theta</a>()</code>,
 <code><a href='rmvn_chol_of_vechsrhocap.html'>rmvn_chol_of_vechsrhocap</a>()</code>,
@@ -210,10 +221,10 @@ returns a <code>matrix</code>.</p></td>
 <span class='op'>)</span>
 
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] 100.0708 100.1349</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 99.82344 99.86692</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;           [,1]      [,2]
-#&gt; [1,] 1.1044016 0.5274819
-#&gt; [2,] 0.5274819 1.0229528</div></pre>
+#&gt; [1,] 1.0636791 0.4611569
+#&gt; [2,] 0.4611569 0.8953437</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

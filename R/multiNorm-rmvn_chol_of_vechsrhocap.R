@@ -11,25 +11,16 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @param n Positive integer.
-#'   `n` variates.
 #' @param x Numeric vector.
 #'   Parameter.
 #'   Strict half-vectorization
 #'   of the correlation matrix
 #'   \eqn{\mathrm{vechs} \left( \mathbf{P} \right)}.
-#' @param varnames Character vector
-#'   Optional variable names.
-#' @param data_frame Logical.
-#'   If `data_frame = TRUE`,
-#'   returns a `data.frame`.
-#'   If `data_frame = FALSE`,
-#'   returns a `matrix`.
+#' @inheritParams rmvn_chol
 #'
 #' @returns A matrix (`data_frame = FALSE`) or data.frame (`data_frame = TRUE`).
 #'
 #' @examples
-#'
 #' x <- rmvn_chol_of_vechsrhocap(
 #'   n = 100,
 #'   x = 0.5

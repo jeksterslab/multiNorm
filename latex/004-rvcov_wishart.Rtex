@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{Generating Sample Covariance Matrices from the Wishart Distribution}
+\author{Ivan Jacob Agaloos Pesigan}
+
+\begin{document}
+
+\maketitle
+
+<<echo=FALSE>>=
+root <- rprojroot::is_rstudio_project
+source(
+  root$find_file(
+    "latex",
+    "R_scripts",
+    "start.R"
+  )
+)
+@
+
+The multivariate normal distribution is given by
+
+\input{latex/equations/mvn}
+
+The Wishart distribution is given by
+
+\input{latex/equations/wishart}
+
+When data is randomly sampled from the multivariate normal distribution,
+the unbiased sample covariance matrix $S_{n - 1}$,
+where $n$ is the sample size
+and $n - 1$ is the degrees of freedom,
+is given by
+
+\input{latex/equations/vcov_wishart}
+
+Sample covariances can be generated from the Wishart distribution using
+
+\input{latex/equations/vcov_inv_wishart}
+
+<<>>=
+set.seed(42)
+n_i <- 1000
+df_i <- n_i - 1
+rcap_i <- 10
+k_i <- sample(x = 2:10, size = 1)
+sigmacap_i <- toeplitz((k_i:1) / k_i) 
+vech_i <- vech(sigmacap_i)
+sigmacap_i
+vech_i
+df_i
+@
+
+\section{rvcov\_wishart}
+
+<<>>=
+data_i <- rvcov_wishart(
+  rcap = rcap_i,
+  sigmacap = sigmacap_i,
+  df = df_i,
+  vector = FALSE
+)
+data_i
+@
+
+<<>>=
+data_i <- rvcov_wishart(
+  rcap = rcap_i,
+  sigmacap = sigmacap_i,
+  df = df_i,
+  vector = TRUE
+)
+data_i
+@
+
+\section{rvcov\_wishart\_of\_vechsigmacap}
+
+<<>>=
+data_i <- rvcov_wishart_of_vechsigmacap(
+  rcap = rcap_i,
+  x = vech_i,
+  df = df_i,
+  vector = FALSE
+)
+data_i
+@
+
+<<>>=
+data_i <- rvcov_wishart_of_vechsigmacap(
+  rcap = rcap_i,
+  x = vech_i,
+  df = df_i,
+  vector = TRUE
+)
+data_i
+@
+
+<<echo = FALSE>>=
+rm(
+  data_i,
+  df_i,
+  k_i,
+  n_i,
+  rcap_i,
+  sigmacap_i,
+  vech_i
+)
+@
+
+\end{document}

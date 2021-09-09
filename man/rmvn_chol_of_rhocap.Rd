@@ -35,7 +35,6 @@ from the Multivariate Normal Distribution
 Using the Cholesky Decomposition - Correlation Matrix Input
 }
 \examples{
-
 rhocap <- matrix(
   data = c(
     1, 0.5, 0.5, 1
@@ -53,6 +52,8 @@ cov(x)
 }
 \seealso{
 Other Multivariate Normal Distribution Functions: 
+\code{\link{rmeans_mvn_chol_of_theta}()},
+\code{\link{rmeans_mvn_chol}()},
 \code{\link{rmvn_chol_of_theta}()},
 \code{\link{rmvn_chol_of_vechsrhocap}()},
 \code{\link{rmvn_chol}()},
