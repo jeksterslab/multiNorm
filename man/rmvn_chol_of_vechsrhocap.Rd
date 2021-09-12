@@ -40,19 +40,14 @@ of the Correlation Matrix Input
 \section{Dependencies}{
 \itemize{
 \item \code{\link[=sym_of_vechs]{sym_of_vechs()}}
-\item \code{\link[=vechs]{vechs()}} (test)
-\item \code{\link[=vechsnames]{vechsnames()}} (test)
 }
 }
 
 \examples{
-x <- rmvn_chol_of_vechsrhocap(
-  n = 100,
+rmvn_chol_of_vechsrhocap(
+  n = 5,
   x = 0.5
 )
-
-colMeans(x)
-cov(x)
 }
 \seealso{
 Other Multivariate Normal Distribution Functions: 
@@ -62,7 +57,8 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rmvn_chol_of_theta}()},
 \code{\link{rmvn_chol}()},
 \code{\link{rvcov_wishart_of_vechsigmacap}()},
-\code{\link{rvcov_wishart}()}
+\code{\link{rvcov_wishart}()},
+\code{\link{theta_helper}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

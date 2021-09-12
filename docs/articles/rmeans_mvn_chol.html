@@ -122,9 +122,10 @@
 <span class="va">k_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">10</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="va">mu_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">0</span>, times <span class="op">=</span> <span class="va">k_i</span><span class="op">)</span>
 <span class="va">sigmacap_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/toeplitz.html">toeplitz</a></span><span class="op">(</span><span class="op">(</span><span class="va">k_i</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span> <span class="op">/</span> <span class="va">k_i</span><span class="op">)</span>
+<span class="va">vech_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/vech.html">vech</a></span><span class="op">(</span><span class="va">sigmacap_i</span><span class="op">)</span>
 <span class="va">theta_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>
   <span class="va">mu_i</span>,
-  <span class="fu"><a href="../reference/vech.html">vech</a></span><span class="op">(</span><span class="va">sigmacap_i</span><span class="op">)</span>
+  <span class="va">vech_i</span>
 <span class="op">)</span>
 <span class="va">mu_i</span>
 <span class="co">#&gt; [1] 0 0</span>
@@ -194,7 +195,6 @@
 <span class="co">#&gt;              [,1]         [,2]</span>
 <span class="co">#&gt; [1,] 0.0008037030 0.0004497138</span>
 <span class="co">#&gt; [2,] 0.0004497138 0.0016259441</span></code></pre></div>
-<p>&lt;&lt;echo = FALSE&gt;&gt;= rm( data_i, k_i, mu_i, n_i, rcap_i, sigmacap_i, theta_i ) ```</p>
 </div>
   </div>
 

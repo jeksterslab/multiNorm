@@ -195,8 +195,6 @@ returns a <code>matrix</code>.</p></td>
     
 <ul>
 <li><p><code><a href='sym_of_vechs.html'>sym_of_vechs()</a></code></p></li>
-<li><p><code><a href='vechs.html'>vechs()</a></code> (test)</p></li>
-<li><p><code><a href='vechsnames.html'>vechsnames()</a></code> (test)</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
@@ -208,22 +206,23 @@ returns a <code>matrix</code>.</p></td>
 <code><a href='rmvn_chol_of_theta.html'>rmvn_chol_of_theta</a>()</code>,
 <code><a href='rmvn_chol.html'>rmvn_chol</a>()</code>,
 <code><a href='rvcov_wishart_of_vechsigmacap.html'>rvcov_wishart_of_vechsigmacap</a>()</code>,
-<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code></p></div>
+<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code>,
+<code><a href='theta_helper.html'>theta_helper</a>()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Ivan Jacob Agaloos Pesigan</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>rmvn_chol_of_vechsrhocap</span><span class='op'>(</span>
-  n <span class='op'>=</span> <span class='fl'>100</span>,
+    <pre class="examples"><div class='input'><span class='fu'>rmvn_chol_of_vechsrhocap</span><span class='op'>(</span>
+  n <span class='op'>=</span> <span class='fl'>5</span>,
   x <span class='op'>=</span> <span class='fl'>0.5</span>
 <span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] -0.1474754 -0.2533500</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;           [,1]      [,2]
-#&gt; [1,] 1.1222395 0.6324966
-#&gt; [2,] 0.6324966 1.0900263</div></pre>
+</div><div class='output co'>#&gt;             [,1]       [,2]
+#&gt; [1,]  0.86208648  0.9072079
+#&gt; [2,] -0.24323674 -2.0910596
+#&gt; [3,] -0.20608719  2.2201191
+#&gt; [4,]  0.01917759 -0.3032380
+#&gt; [5,]  0.02956075  0.1995519</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

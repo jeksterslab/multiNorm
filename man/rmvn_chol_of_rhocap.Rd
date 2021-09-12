@@ -42,13 +42,10 @@ rhocap <- matrix(
   nrow = 2
 )
 
-x <- rmvn_chol_of_rhocap(
-  n = 100,
+rmvn_chol_of_rhocap(
+  n = 5,
   x = rhocap
 )
-
-colMeans(x)
-cov(x)
 }
 \seealso{
 Other Multivariate Normal Distribution Functions: 
@@ -58,7 +55,8 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rmvn_chol_of_vechsrhocap}()},
 \code{\link{rmvn_chol}()},
 \code{\link{rvcov_wishart_of_vechsigmacap}()},
-\code{\link{rvcov_wishart}()}
+\code{\link{rvcov_wishart}()},
+\code{\link{theta_helper}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

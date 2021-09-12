@@ -2,11 +2,13 @@
 tol_i <- 0.05
 n_i <- 100
 k_i <- sample(x = 2:10, size = 1)
+vech_i <- toeplitz((k_i:1) / k_i)
+vech_i <- vech_i[lower.tri(vech_i, diag = TRUE)]
 data_i <- rmeans_mvn_chol_of_theta(
   rcap = 10000,
   x = c(
     rep(x = 0, times = k_i),
-    vech(toeplitz((k_i:1) / k_i))
+    vech_i
   ),
   n = n_i
 )
@@ -43,7 +45,7 @@ data_i <- rmeans_mvn_chol_of_theta(
   rcap = 10,
   x = c(
     rep(x = 0, times = k_i),
-    vech(toeplitz((k_i:1) / k_i))
+    vech_i
   ),
   n = n_i,
   varnames = paste0("x", seq_len(k_i)),
@@ -55,5 +57,6 @@ rm(
   n_i,
   tol_i,
   k_i,
-  data_i
+  data_i,
+  vech_i
 )

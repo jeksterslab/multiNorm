@@ -152,7 +152,7 @@
   rcap <span class="op">=</span> <span class="va">rcap_i</span>,
   sigmacap <span class="op">=</span> <span class="va">sigmacap_i</span>,
   df <span class="op">=</span> <span class="va">df_i</span>,
-  vector <span class="op">=</span> <span class="cn">FALSE</span>
+  list <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span>
 <span class="va">data_i</span>
 <span class="co">#&gt; [[1]]</span>
@@ -209,101 +209,157 @@
   rcap <span class="op">=</span> <span class="va">rcap_i</span>,
   sigmacap <span class="op">=</span> <span class="va">sigmacap_i</span>,
   df <span class="op">=</span> <span class="va">df_i</span>,
-  vector <span class="op">=</span> <span class="cn">TRUE</span>
+  list <span class="op">=</span> <span class="cn">FALSE</span>,
+  vec <span class="op">=</span> <span class="cn">TRUE</span>
+<span class="op">)</span>
+<span class="va">data_i</span>
+<span class="co">#&gt;            [,1]      [,2]      [,3]      [,4]</span>
+<span class="co">#&gt;  [1,] 0.9236876 0.3982690 0.3982690 0.9184903</span>
+<span class="co">#&gt;  [2,] 1.0006151 0.4904116 0.4904116 0.9957761</span>
+<span class="co">#&gt;  [3,] 1.0331928 0.5024078 0.5024078 0.9686390</span>
+<span class="co">#&gt;  [4,] 0.8488979 0.4135571 0.4135571 0.9991660</span>
+<span class="co">#&gt;  [5,] 1.0285356 0.4924865 0.4924865 0.9951435</span>
+<span class="co">#&gt;  [6,] 1.0707103 0.5379001 0.5379001 1.0404349</span>
+<span class="co">#&gt;  [7,] 1.0114050 0.5081779 0.5081779 1.0267770</span>
+<span class="co">#&gt;  [8,] 0.8696278 0.4290415 0.4290415 0.9923579</span>
+<span class="co">#&gt;  [9,] 1.0091638 0.4845631 0.4845631 0.9722642</span>
+<span class="co">#&gt; [10,] 1.0580996 0.5583196 0.5583196 1.0544043</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rvcov_wishart.html">rvcov_wishart</a></span><span class="op">(</span>
+  rcap <span class="op">=</span> <span class="va">rcap_i</span>,
+  sigmacap <span class="op">=</span> <span class="va">sigmacap_i</span>,
+  df <span class="op">=</span> <span class="va">df_i</span>,
+  list <span class="op">=</span> <span class="cn">FALSE</span>,
+  vec <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
 <span class="va">data_i</span>
 <span class="co">#&gt;            [,1]      [,2]      [,3]</span>
-<span class="co">#&gt;  [1,] 0.9236876 0.3982690 0.9184903</span>
-<span class="co">#&gt;  [2,] 1.0006151 0.4904116 0.9957761</span>
-<span class="co">#&gt;  [3,] 1.0331928 0.5024078 0.9686390</span>
-<span class="co">#&gt;  [4,] 0.8488979 0.4135571 0.9991660</span>
-<span class="co">#&gt;  [5,] 1.0285356 0.4924865 0.9951435</span>
-<span class="co">#&gt;  [6,] 1.0707103 0.5379001 1.0404349</span>
-<span class="co">#&gt;  [7,] 1.0114050 0.5081779 1.0267770</span>
-<span class="co">#&gt;  [8,] 0.8696278 0.4290415 0.9923579</span>
-<span class="co">#&gt;  [9,] 1.0091638 0.4845631 0.9722642</span>
-<span class="co">#&gt; [10,] 1.0580996 0.5583196 1.0544043</span></code></pre></div>
+<span class="co">#&gt;  [1,] 1.0405995 0.4911440 1.0046715</span>
+<span class="co">#&gt;  [2,] 0.9949698 0.5410963 1.0734060</span>
+<span class="co">#&gt;  [3,] 0.9530117 0.4889109 1.0252920</span>
+<span class="co">#&gt;  [4,] 0.9597786 0.4832960 1.0076388</span>
+<span class="co">#&gt;  [5,] 0.9612419 0.4566492 0.9613875</span>
+<span class="co">#&gt;  [6,] 0.9890630 0.5008936 0.9960531</span>
+<span class="co">#&gt;  [7,] 1.0321698 0.4981125 1.0259448</span>
+<span class="co">#&gt;  [8,] 1.0290149 0.4989433 1.0180819</span>
+<span class="co">#&gt;  [9,] 1.0344659 0.5194619 0.9719226</span>
+<span class="co">#&gt; [10,] 1.0284247 0.5432424 1.0762569</span></code></pre></div>
 </div>
 <div id="rvcov_wishart_of_vechsigmacap" class="section level2">
 <h2 class="hasAnchor">
 <a href="#rvcov_wishart_of_vechsigmacap" class="anchor"></a>rvcov_wishart_of_vechsigmacap</h2>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">data_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rvcov_wishart_of_vechsigmacap.html">rvcov_wishart_of_vechsigmacap</a></span><span class="op">(</span>
-  rcap <span class="op">=</span> <span class="va">rcap_i</span>,
-  x <span class="op">=</span> <span class="va">vech_i</span>,
-  df <span class="op">=</span> <span class="va">df_i</span>,
-  vector <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span>
-<span class="va">data_i</span>
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt;          [,1]     [,2]</span>
-<span class="co">#&gt; [1,] 1.040600 0.491144</span>
-<span class="co">#&gt; [2,] 0.491144 1.004671</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[2]]</span>
-<span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 0.9949698 0.5410963</span>
-<span class="co">#&gt; [2,] 0.5410963 1.0734060</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[3]]</span>
-<span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 0.9530117 0.4889109</span>
-<span class="co">#&gt; [2,] 0.4889109 1.0252920</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[4]]</span>
-<span class="co">#&gt;           [,1]     [,2]</span>
-<span class="co">#&gt; [1,] 0.9597786 0.483296</span>
-<span class="co">#&gt; [2,] 0.4832960 1.007639</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[5]]</span>
-<span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 0.9612419 0.4566492</span>
-<span class="co">#&gt; [2,] 0.4566492 0.9613875</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[6]]</span>
-<span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 0.9890630 0.5008936</span>
-<span class="co">#&gt; [2,] 0.5008936 0.9960531</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[7]]</span>
-<span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 1.0321698 0.4981125</span>
-<span class="co">#&gt; [2,] 0.4981125 1.0259448</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[8]]</span>
-<span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 1.0290149 0.4989433</span>
-<span class="co">#&gt; [2,] 0.4989433 1.0180819</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[9]]</span>
-<span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 1.0344659 0.5194619</span>
-<span class="co">#&gt; [2,] 0.5194619 0.9719226</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[10]]</span>
-<span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 1.0284247 0.5432424</span>
-<span class="co">#&gt; [2,] 0.5432424 1.0762569</span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rvcov_wishart_of_vechsigmacap.html">rvcov_wishart_of_vechsigmacap</a></span><span class="op">(</span>
   rcap <span class="op">=</span> <span class="va">rcap_i</span>,
   x <span class="op">=</span> <span class="va">vech_i</span>,
-  df <span class="op">=</span> <span class="va">df_i</span>,
-  vector <span class="op">=</span> <span class="cn">TRUE</span>
+  df <span class="op">=</span> <span class="va">df_i</span>
 <span class="op">)</span>
 <span class="va">data_i</span>
-<span class="co">#&gt;            [,1]      [,2]      [,3]</span>
-<span class="co">#&gt;  [1,] 0.9546379 0.4801437 0.9886962</span>
-<span class="co">#&gt;  [2,] 0.9802044 0.4798945 1.0169829</span>
-<span class="co">#&gt;  [3,] 1.0552743 0.5139737 0.9673956</span>
-<span class="co">#&gt;  [4,] 0.9765770 0.4744074 0.9560666</span>
-<span class="co">#&gt;  [5,] 1.1234849 0.5559814 0.9786708</span>
-<span class="co">#&gt;  [6,] 1.0059256 0.4755743 0.9467053</span>
-<span class="co">#&gt;  [7,] 0.9989175 0.4440129 0.9165281</span>
-<span class="co">#&gt;  [8,] 0.9449774 0.4416278 0.9650729</span>
-<span class="co">#&gt;  [9,] 1.0720602 0.5768786 1.0224307</span>
-<span class="co">#&gt; [10,] 0.9505370 0.4627204 0.9373393</span></code></pre></div>
-<p>\end{document}</p>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9546379 0.4801437</span>
+<span class="co">#&gt; [2,] 0.4801437 0.9886962</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9802044 0.4798945</span>
+<span class="co">#&gt; [2,] 0.4798945 1.0169829</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 1.0552743 0.5139737</span>
+<span class="co">#&gt; [2,] 0.5139737 0.9673956</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[4]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9765770 0.4744074</span>
+<span class="co">#&gt; [2,] 0.4744074 0.9560666</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[5]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 1.1234849 0.5559814</span>
+<span class="co">#&gt; [2,] 0.5559814 0.9786708</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[6]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 1.0059256 0.4755743</span>
+<span class="co">#&gt; [2,] 0.4755743 0.9467053</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[7]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9989175 0.4440129</span>
+<span class="co">#&gt; [2,] 0.4440129 0.9165281</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[8]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9449774 0.4416278</span>
+<span class="co">#&gt; [2,] 0.4416278 0.9650729</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[9]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 1.0720602 0.5768786</span>
+<span class="co">#&gt; [2,] 0.5768786 1.0224307</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[10]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9505370 0.4627204</span>
+<span class="co">#&gt; [2,] 0.4627204 0.9373393</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rvcov_wishart_of_vechsigmacap.html">rvcov_wishart_of_vechsigmacap</a></span><span class="op">(</span>
+  rcap <span class="op">=</span> <span class="va">rcap_i</span>,
+  x <span class="op">=</span> <span class="va">vech_i</span>,
+  df <span class="op">=</span> <span class="va">df_i</span>
+<span class="op">)</span>
+<span class="va">data_i</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9966539 0.4861631</span>
+<span class="co">#&gt; [2,] 0.4861631 0.9314860</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9976826 0.4856775</span>
+<span class="co">#&gt; [2,] 0.4856775 0.9230452</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9797210 0.4398225</span>
+<span class="co">#&gt; [2,] 0.4398225 0.9547231</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[4]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9927749 0.4889167</span>
+<span class="co">#&gt; [2,] 0.4889167 1.0289175</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[5]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9781859 0.4532661</span>
+<span class="co">#&gt; [2,] 0.4532661 1.0284885</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[6]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 1.0662612 0.5998258</span>
+<span class="co">#&gt; [2,] 0.5998258 1.0991984</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[7]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9869835 0.4836177</span>
+<span class="co">#&gt; [2,] 0.4836177 0.9909505</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[8]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 1.0255594 0.4852347</span>
+<span class="co">#&gt; [2,] 0.4852347 1.0268742</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[9]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 1.0194350 0.5344932</span>
+<span class="co">#&gt; [2,] 0.5344932 1.0315839</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[10]]</span>
+<span class="co">#&gt;           [,1]      [,2]</span>
+<span class="co">#&gt; [1,] 0.9887494 0.5404045</span>
+<span class="co">#&gt; [2,] 0.5404045 1.0318706</span></code></pre></div>
 </div>
   </div>
 

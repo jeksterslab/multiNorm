@@ -6,8 +6,6 @@
 #' @details
 #' # Dependencies
 #' * [sym_of_vechs()]
-#' * [vechs()] (test)
-#' * [vechsnames()] (test)
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -21,13 +19,10 @@
 #' @returns A matrix (`data_frame = FALSE`) or data.frame (`data_frame = TRUE`).
 #'
 #' @examples
-#' x <- rmvn_chol_of_vechsrhocap(
-#'   n = 100,
+#' rmvn_chol_of_vechsrhocap(
+#'   n = 5,
 #'   x = 0.5
 #' )
-#'
-#' colMeans(x)
-#' cov(x)
 #' @export
 #' @family Multivariate Normal Distribution Functions
 #' @keywords multiNorm
@@ -35,33 +30,12 @@ rmvn_chol_of_vechsrhocap <- function(n,
                                      x,
                                      varnames = NULL,
                                      data_frame = FALSE) {
-  stopifnot(
-    is.vector(n),
-    length(n) == 1
-  )
-  stopifnot(
-    !any(
-      abs(as.vector(x)) > 1
+  return(
+    rmvn_chol_of_rhocap(
+      n = n,
+      x = sym_of_vechs(x, diags = 1),
+      varnames = varnames,
+      data_frame = data_frame
     )
   )
-  x <- sym_of_vechs(x, diags = 1)
-  n <- as.integer(n)
-  k <- dim(x)[1]
-  qcap <- chol(x)
-  zcap <- matrix(
-    data = stats::rnorm(
-      n = n * k
-    ),
-    nrow = n,
-    ncol = k
-  )
-  output <- zcap %*% qcap
-  if (!is.null(varnames)) {
-    stopifnot(length(varnames) == k)
-    colnames(output) <- varnames
-  }
-  if (data_frame) {
-    output <- as.data.frame(output)
-  }
-  return(output)
 }

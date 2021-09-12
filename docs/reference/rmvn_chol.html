@@ -200,13 +200,14 @@ returns a <code>matrix</code>.</p></td>
 <code><a href='rmvn_chol_of_theta.html'>rmvn_chol_of_theta</a>()</code>,
 <code><a href='rmvn_chol_of_vechsrhocap.html'>rmvn_chol_of_vechsrhocap</a>()</code>,
 <code><a href='rvcov_wishart_of_vechsigmacap.html'>rvcov_wishart_of_vechsigmacap</a>()</code>,
-<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code></p></div>
+<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code>,
+<code><a href='theta_helper.html'>theta_helper</a>()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Ivan Jacob Agaloos Pesigan</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>mu</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>100</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='va'>mu</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
 <span class='va'>sigmacap</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>
   data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
     <span class='fl'>1</span>, <span class='fl'>0.5</span>, <span class='fl'>0.5</span>, <span class='fl'>1</span>
@@ -214,17 +215,17 @@ returns a <code>matrix</code>.</p></td>
   nrow <span class='op'>=</span> <span class='fl'>2</span>
 <span class='op'>)</span>
 
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>rmvn_chol</span><span class='op'>(</span>
-  n <span class='op'>=</span> <span class='fl'>100</span>,
+<span class='fu'>rmvn_chol</span><span class='op'>(</span>
+  n <span class='op'>=</span> <span class='fl'>5</span>,
   mu <span class='op'>=</span> <span class='va'>mu</span>,
   sigmacap <span class='op'>=</span> <span class='va'>sigmacap</span>
 <span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] 99.82344 99.86692</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;           [,1]      [,2]
-#&gt; [1,] 1.0636791 0.4611569
-#&gt; [2,] 0.4611569 0.8953437</div></pre>
+</div><div class='output co'>#&gt;            [,1]       [,2]
+#&gt; [1,]  0.4681544  0.1496873
+#&gt; [2,]  0.3629513 -0.6289920
+#&gt; [3,] -1.3045435 -0.6660851
+#&gt; [4,]  0.7377763 -0.3471321
+#&gt; [5,]  1.8885049 -0.3655241</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

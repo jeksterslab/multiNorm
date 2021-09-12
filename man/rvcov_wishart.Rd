@@ -5,7 +5,7 @@
 \title{Generate Sample Variance-Covariance Matrix
 from the Wishart Distribution}
 \usage{
-rvcov_wishart(rcap, sigmacap, df, vector = FALSE)
+rvcov_wishart(rcap, sigmacap, df, list = TRUE, vec = TRUE)
 }
 \arguments{
 \item{rcap}{Positive integer.
@@ -20,16 +20,26 @@ Covariance matrix
 Parameter.
 Degrees of freedom.}
 
-\item{vector}{Logical.
-If \code{vector = TRUE},
-returns the half-vectorization of the covariance matrix
+\item{list}{Logical.
+If \code{list = TRUE},
+returns a list where each element is a covariance matrix.
+If \code{list = FALSE},
+returns a matrix where each row corresponds to
+the vectorization of the output matrix (\code{vec = TRUE}) or
+the half-vectorization of the output matrix (\code{vec = FALSE})
+If \code{list = FALSE}}
+
+\item{vec}{Logical.
+This is only evaluated when \code{list = FALSE}.
+If \code{vec = TRUE},
+returns the vectorization of the covariance matrix
 for each \code{R} variate.
-If \code{vector = FALSE},
-returns the covariance matrix
+If \code{vec = FALSE},
+returns the half-covariance matrix
 for each \code{R} variate.}
 }
 \value{
-A list (\code{vector = FALSE}) or matrix (\code{vector = TRUE}).
+A list (\code{vec = FALSE}) or matrix (\code{vec = TRUE}).
 }
 \description{
 Generate Sample Variance-Covariance Matrix
@@ -43,14 +53,12 @@ sigmacap <- matrix(
   nrow = 2
 )
 
-x <- rvcov_wishart(
-  rcap = 100,
+rvcov_wishart(
+  rcap = 5,
   sigmacap = sigmacap,
   df = 100,
-  vector = TRUE
+  list = FALSE
 )
-
-colMeans(x)
 }
 \seealso{
 Other Multivariate Normal Distribution Functions: 
@@ -60,7 +68,8 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rmvn_chol_of_theta}()},
 \code{\link{rmvn_chol_of_vechsrhocap}()},
 \code{\link{rmvn_chol}()},
-\code{\link{rvcov_wishart_of_vechsigmacap}()}
+\code{\link{rvcov_wishart_of_vechsigmacap}()},
+\code{\link{theta_helper}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

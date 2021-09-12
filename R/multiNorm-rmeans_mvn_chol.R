@@ -30,14 +30,12 @@
 #'   nrow = 2
 #' )
 #'
-#' x <- rmeans_mvn_chol(
-#'   rcap = 100,
+#' rmeans_mvn_chol(
+#'   rcap = 5,
 #'   mu = mu,
 #'   sigmacap = sigmacap,
 #'   n = 100
 #' )
-#'
-#' colMeans(x)
 #' @export
 #' @family Multivariate Normal Distribution Functions
 #' @keywords multiNorm

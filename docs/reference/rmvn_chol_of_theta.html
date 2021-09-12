@@ -167,7 +167,7 @@ Vector of parameters
     \boldsymbol{\theta}
     =
     \{
-      \boldsymbol{\mu}
+      \boldsymbol{\mu} ,
       \mathrm{vech} \left( \boldsymbol{\Sigma} \right)
     \}^{\prime}
   \).</p></td>
@@ -199,22 +199,23 @@ returns a <code>matrix</code>.</p></td>
 <code><a href='rmvn_chol_of_vechsrhocap.html'>rmvn_chol_of_vechsrhocap</a>()</code>,
 <code><a href='rmvn_chol.html'>rmvn_chol</a>()</code>,
 <code><a href='rvcov_wishart_of_vechsigmacap.html'>rvcov_wishart_of_vechsigmacap</a>()</code>,
-<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code></p></div>
+<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code>,
+<code><a href='theta_helper.html'>theta_helper</a>()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Ivan Jacob Agaloos Pesigan</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>rmvn_chol_of_theta</span><span class='op'>(</span>
-  n <span class='op'>=</span> <span class='fl'>100</span>,
+    <pre class="examples"><div class='input'><span class='fu'>rmvn_chol_of_theta</span><span class='op'>(</span>
+  n <span class='op'>=</span> <span class='fl'>5</span>,
   x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0.5</span>, <span class='fl'>1</span><span class='op'>)</span>
 <span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] -0.10242794  0.06809696</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;           [,1]      [,2]
-#&gt; [1,] 0.9568448 0.5055861
-#&gt; [2,] 0.5055861 0.9447690</div></pre>
+</div><div class='output co'>#&gt;             [,1]        [,2]
+#&gt; [1,]  0.07003485  2.42127904
+#&gt; [2,] -0.63912332 -0.27926430
+#&gt; [3,] -0.04996490  0.47532828
+#&gt; [4,] -0.25148344 -0.02338196
+#&gt; [5,]  0.44479712 -1.43319995</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

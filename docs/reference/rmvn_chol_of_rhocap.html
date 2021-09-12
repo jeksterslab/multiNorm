@@ -193,7 +193,8 @@ returns a <code>matrix</code>.</p></td>
 <code><a href='rmvn_chol_of_vechsrhocap.html'>rmvn_chol_of_vechsrhocap</a>()</code>,
 <code><a href='rmvn_chol.html'>rmvn_chol</a>()</code>,
 <code><a href='rvcov_wishart_of_vechsigmacap.html'>rvcov_wishart_of_vechsigmacap</a>()</code>,
-<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code></p></div>
+<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code>,
+<code><a href='theta_helper.html'>theta_helper</a>()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Ivan Jacob Agaloos Pesigan</p>
@@ -206,16 +207,16 @@ returns a <code>matrix</code>.</p></td>
   nrow <span class='op'>=</span> <span class='fl'>2</span>
 <span class='op'>)</span>
 
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>rmvn_chol_of_rhocap</span><span class='op'>(</span>
-  n <span class='op'>=</span> <span class='fl'>100</span>,
+<span class='fu'>rmvn_chol_of_rhocap</span><span class='op'>(</span>
+  n <span class='op'>=</span> <span class='fl'>5</span>,
   x <span class='op'>=</span> <span class='va'>rhocap</span>
 <span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] -0.16328081 -0.03363499</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;           [,1]      [,2]
-#&gt; [1,] 0.9729889 0.5847689
-#&gt; [2,] 0.5847689 1.0076144</div></pre>
+</div><div class='output co'>#&gt;           [,1]       [,2]
+#&gt; [1,] 0.9353632  0.3516368
+#&gt; [2,] 0.1764886 -1.5659400
+#&gt; [3,] 0.2436855 -0.1199838
+#&gt; [4,] 1.6235489  0.5403223
+#&gt; [5,] 0.1120381  0.9803348</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

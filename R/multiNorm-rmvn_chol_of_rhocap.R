@@ -20,13 +20,10 @@
 #'   nrow = 2
 #' )
 #'
-#' x <- rmvn_chol_of_rhocap(
-#'   n = 100,
+#' rmvn_chol_of_rhocap(
+#'   n = 5,
 #'   x = rhocap
 #' )
-#'
-#' colMeans(x)
-#' cov(x)
 #' @export
 #' @family Multivariate Normal Distribution Functions
 #' @keywords multiNorm

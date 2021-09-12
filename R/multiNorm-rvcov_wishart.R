@@ -12,15 +12,24 @@
 #' @param df Positive integer.
 #'   Parameter.
 #'   Degrees of freedom.
-#' @param vector Logical.
-#'   If `vector = TRUE`,
-#'   returns the half-vectorization of the covariance matrix
+#' @param list Logical.
+#'   If `list = TRUE`,
+#'   returns a list where each element is a covariance matrix.
+#'   If `list = FALSE`,
+#'   returns a matrix where each row corresponds to
+#'   the vectorization of the output matrix (`vec = TRUE`) or
+#'   the half-vectorization of the output matrix (`vec = FALSE`)
+#'   If `list = FALSE`
+#' @param vec Logical.
+#'   This is only evaluated when `list = FALSE`.
+#'   If `vec = TRUE`,
+#'   returns the vectorization of the covariance matrix
 #'   for each `R` variate.
-#'   If `vector = FALSE`,
-#'   returns the covariance matrix
+#'   If `vec = FALSE`,
+#'   returns the half-covariance matrix
 #'   for each `R` variate.
 #'
-#' @returns A list (`vector = FALSE`) or matrix (`vector = TRUE`).
+#' @returns A list (`vec = FALSE`) or matrix (`vec = TRUE`).
 #'
 #' @examples
 #' sigmacap <- matrix(
@@ -30,29 +39,30 @@
 #'   nrow = 2
 #' )
 #'
-#' x <- rvcov_wishart(
-#'   rcap = 100,
+#' rvcov_wishart(
+#'   rcap = 5,
 #'   sigmacap = sigmacap,
 #'   df = 100,
-#'   vector = TRUE
+#'   list = FALSE
 #' )
-#'
-#' colMeans(x)
 #' @export
 #' @family Multivariate Normal Distribution Functions
 #' @keywords multiNorm
 rvcov_wishart <- function(rcap,
                           sigmacap,
                           df,
-                          vector = FALSE) {
+                          list = TRUE,
+                          vec = TRUE) {
   stopifnot(
     is.matrix(sigmacap),
     is.vector(rcap),
     is.vector(df),
-    is.logical(vector),
+    is.logical(vec),
+    is.logical(list),
     length(rcap) == 1,
     length(df) == 1,
-    length(vector) == 1
+    length(vec) == 1,
+    length(list) == 1
   )
   rcap <- as.integer(rcap)
   output <- stats::rWishart(
@@ -60,36 +70,37 @@ rvcov_wishart <- function(rcap,
     df = df,
     Sigma = sigmacap
   )
-  output
-  foo <- function(x) {
-    if (vector) {
-      return(
-        vech(
-          as.matrix(
-            output[, , x]
-          ) / df
-        )
-      )
-    } else {
+  output <- lapply(
+    X = seq_len(rcap),
+    FUN = function(x) {
       return(
         as.matrix(
           output[, , x]
         ) / df
       )
     }
-  }
-  output <- lapply(
-    X = seq_len(rcap),
-    FUN = foo
   )
-  if (vector) {
+  if (list) {
+    return(output)
+  } else {
+    if (vec) {
+      output <- lapply(
+        X = output,
+        FUN = as.vector
+      )
+    } else {
+      output <- lapply(
+        X = output,
+        FUN = function(x) {
+          return(x[lower.tri(x, diag = TRUE)])
+        }
+      )
+    }
     return(
       do.call(
         what = "rbind",
         args = output
       )
     )
-  } else {
-    return(output)
   }
 }

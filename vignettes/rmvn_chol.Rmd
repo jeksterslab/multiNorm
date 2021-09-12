@@ -97,7 +97,7 @@ cov(data_i)
 ```{r}
 theta_i <- c(
   mu_i,
-  vech(sigmacap_i)
+  vech_i
 )
 data_i <- rmvn_chol_of_theta(
   n = n_i,

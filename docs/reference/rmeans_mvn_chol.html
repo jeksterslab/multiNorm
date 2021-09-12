@@ -208,7 +208,8 @@ returns a matrix where each row is a vector of means.</p></td>
 <code><a href='rmvn_chol_of_vechsrhocap.html'>rmvn_chol_of_vechsrhocap</a>()</code>,
 <code><a href='rmvn_chol.html'>rmvn_chol</a>()</code>,
 <code><a href='rvcov_wishart_of_vechsigmacap.html'>rvcov_wishart_of_vechsigmacap</a>()</code>,
-<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code></p></div>
+<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code>,
+<code><a href='theta_helper.html'>theta_helper</a>()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Ivan Jacob Agaloos Pesigan</p>
@@ -222,15 +223,18 @@ returns a matrix where each row is a vector of means.</p></td>
   nrow <span class='op'>=</span> <span class='fl'>2</span>
 <span class='op'>)</span>
 
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>rmeans_mvn_chol</span><span class='op'>(</span>
-  rcap <span class='op'>=</span> <span class='fl'>100</span>,
+<span class='fu'>rmeans_mvn_chol</span><span class='op'>(</span>
+  rcap <span class='op'>=</span> <span class='fl'>5</span>,
   mu <span class='op'>=</span> <span class='va'>mu</span>,
   sigmacap <span class='op'>=</span> <span class='va'>sigmacap</span>,
   n <span class='op'>=</span> <span class='fl'>100</span>
 <span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] 0.00707892 0.01348635</div></pre>
+</div><div class='output co'>#&gt;               [,1]         [,2]
+#&gt; [1,] -0.1400043517  0.029453187
+#&gt; [2,]  0.0255317055 -0.145008185
+#&gt; [3,] -0.2437263611 -0.143282180
+#&gt; [4,] -0.0005571287 -0.021426871
+#&gt; [5,]  0.0621552721  0.006594626</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

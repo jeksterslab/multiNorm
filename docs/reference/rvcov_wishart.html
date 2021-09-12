@@ -144,7 +144,7 @@ from the Wishart Distribution</h1>
 from the Wishart Distribution</p>
     </div>
 
-    <pre class="usage"><span class='fu'>rvcov_wishart</span><span class='op'>(</span><span class='va'>rcap</span>, <span class='va'>sigmacap</span>, <span class='va'>df</span>, vector <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>rvcov_wishart</span><span class='op'>(</span><span class='va'>rcap</span>, <span class='va'>sigmacap</span>, <span class='va'>df</span>, list <span class='op'>=</span> <span class='cn'>TRUE</span>, vec <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -168,20 +168,32 @@ Parameter.
 Degrees of freedom.</p></td>
     </tr>
     <tr>
-      <th>vector</th>
+      <th>list</th>
       <td><p>Logical.
-If <code>vector = TRUE</code>,
-returns the half-vectorization of the covariance matrix
+If <code>list = TRUE</code>,
+returns a list where each element is a covariance matrix.
+If <code>list = FALSE</code>,
+returns a matrix where each row corresponds to
+the vectorization of the output matrix (<code>vec = TRUE</code>) or
+the half-vectorization of the output matrix (<code>vec = FALSE</code>)
+If <code>list = FALSE</code></p></td>
+    </tr>
+    <tr>
+      <th>vec</th>
+      <td><p>Logical.
+This is only evaluated when <code>list = FALSE</code>.
+If <code>vec = TRUE</code>,
+returns the vectorization of the covariance matrix
 for each <code>R</code> variate.
-If <code>vector = FALSE</code>,
-returns the covariance matrix
+If <code>vec = FALSE</code>,
+returns the half-covariance matrix
 for each <code>R</code> variate.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list (<code>vector = FALSE</code>) or matrix (<code>vector = TRUE</code>).</p>
+    <p>A list (<code>vec = FALSE</code>) or matrix (<code>vec = TRUE</code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other Multivariate Normal Distribution Functions: 
@@ -191,7 +203,8 @@ for each <code>R</code> variate.</p></td>
 <code><a href='rmvn_chol_of_theta.html'>rmvn_chol_of_theta</a>()</code>,
 <code><a href='rmvn_chol_of_vechsrhocap.html'>rmvn_chol_of_vechsrhocap</a>()</code>,
 <code><a href='rmvn_chol.html'>rmvn_chol</a>()</code>,
-<code><a href='rvcov_wishart_of_vechsigmacap.html'>rvcov_wishart_of_vechsigmacap</a>()</code></p></div>
+<code><a href='rvcov_wishart_of_vechsigmacap.html'>rvcov_wishart_of_vechsigmacap</a>()</code>,
+<code><a href='theta_helper.html'>theta_helper</a>()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Ivan Jacob Agaloos Pesigan</p>
@@ -204,15 +217,18 @@ for each <code>R</code> variate.</p></td>
   nrow <span class='op'>=</span> <span class='fl'>2</span>
 <span class='op'>)</span>
 
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>rvcov_wishart</span><span class='op'>(</span>
-  rcap <span class='op'>=</span> <span class='fl'>100</span>,
+<span class='fu'>rvcov_wishart</span><span class='op'>(</span>
+  rcap <span class='op'>=</span> <span class='fl'>5</span>,
   sigmacap <span class='op'>=</span> <span class='va'>sigmacap</span>,
   df <span class='op'>=</span> <span class='fl'>100</span>,
-  vector <span class='op'>=</span> <span class='cn'>TRUE</span>
+  list <span class='op'>=</span> <span class='cn'>FALSE</span>
 <span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] 1.0166989 0.5090219 1.0065901</div></pre>
+</div><div class='output co'>#&gt;           [,1]      [,2]      [,3]      [,4]
+#&gt; [1,] 1.1469450 0.5104881 0.5104881 0.8940352
+#&gt; [2,] 1.0965141 0.6448423 0.6448423 1.0266235
+#&gt; [3,] 1.0086144 0.3564979 0.3564979 0.9132067
+#&gt; [4,] 0.7938644 0.4151962 0.4151962 0.8563621
+#&gt; [5,] 1.1841898 0.6492756 0.6492756 1.1470291</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

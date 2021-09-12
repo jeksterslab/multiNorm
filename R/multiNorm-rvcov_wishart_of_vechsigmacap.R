@@ -13,73 +13,31 @@
 #' @details
 #' # Dependencies
 #' * [sym_of_vech()]
-#' * [vech()] (test)
-#' * [vechnames()] (test)
 #'
-#' @returns A list (`vector = FALSE`) or matrix (`vector = TRUE`).
+#' @returns A list (`list = TRUE`) or matrix (`list = FALSE`).
 #'
 #' @examples
-#' x <- rvcov_wishart_of_vechsigmacap(
-#'   rcap = 100,
+#' rvcov_wishart_of_vechsigmacap(
+#'   rcap = 5,
 #'   x = c(1, 0.5, 1),
 #'   df = 100,
-#'   vector = TRUE
+#'   list = FALSE
 #' )
-#'
-#' colMeans(x)
 #' @export
 #' @family Multivariate Normal Distribution Functions
 #' @keywords multiNorm
 rvcov_wishart_of_vechsigmacap <- function(rcap,
                                           x,
                                           df,
-                                          vector = FALSE) {
-  stopifnot(
-    is.vector(x),
-    is.vector(rcap),
-    is.vector(df),
-    is.logical(vector),
-    length(rcap) == 1,
-    length(df) == 1,
-    length(vector) == 1
-  )
-  sigmacap <- sym_of_vech(x)
-  rcap <- as.integer(rcap)
-  output <- stats::rWishart(
-    n = rcap,
-    df = df,
-    Sigma = sigmacap
-  )
-  output
-  foo <- function(x) {
-    if (vector) {
-      return(
-        vech(
-          as.matrix(
-            output[, , x]
-          ) / df
-        )
-      )
-    } else {
-      return(
-        as.matrix(
-          output[, , x]
-        ) / df
-      )
-    }
-  }
-  output <- lapply(
-    X = seq_len(rcap),
-    FUN = foo
-  )
-  if (vector) {
-    return(
-      do.call(
-        what = "rbind",
-        args = output
-      )
+                                          list = TRUE,
+                                          vec = FALSE) {
+  return(
+    rvcov_wishart(
+      rcap = rcap,
+      sigmacap = sym_of_vech(x),
+      df = df,
+      list = list,
+      vec = vec
     )
-  } else {
-    return(output)
-  }
+  )
 }

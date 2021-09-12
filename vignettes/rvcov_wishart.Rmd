@@ -90,7 +90,7 @@ data_i <- rvcov_wishart(
   rcap = rcap_i,
   sigmacap = sigmacap_i,
   df = df_i,
-  vector = FALSE
+  list = TRUE
 )
 data_i
 ```
@@ -100,7 +100,19 @@ data_i <- rvcov_wishart(
   rcap = rcap_i,
   sigmacap = sigmacap_i,
   df = df_i,
-  vector = TRUE
+  list = FALSE,
+  vec = TRUE
+)
+data_i
+```
+
+```{r}
+data_i <- rvcov_wishart(
+  rcap = rcap_i,
+  sigmacap = sigmacap_i,
+  df = df_i,
+  list = FALSE,
+  vec = FALSE
 )
 data_i
 ```
@@ -111,8 +123,7 @@ data_i
 data_i <- rvcov_wishart_of_vechsigmacap(
   rcap = rcap_i,
   x = vech_i,
-  df = df_i,
-  vector = FALSE
+  df = df_i
 )
 data_i
 ```
@@ -121,10 +132,7 @@ data_i
 data_i <- rvcov_wishart_of_vechsigmacap(
   rcap = rcap_i,
   x = vech_i,
-  df = df_i,
-  vector = TRUE
+  df = df_i
 )
 data_i
 ```
-
-\end{document}

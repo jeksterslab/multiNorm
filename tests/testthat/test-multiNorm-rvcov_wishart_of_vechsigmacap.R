@@ -1,11 +1,14 @@
 ## ---- test-multiNorm-rvcov_wishart_of_vechsigmacap
 tol_i <- 0.05
 k_i <- sample(x = 2:10, size = 1)
+vech_i <- toeplitz((k_i:1) / k_i)
+vech_i <- vech_i[lower.tri(vech_i, diag = TRUE)]
 data_i <- rvcov_wishart_of_vechsigmacap(
   rcap = 10000,
-  x = vech(toeplitz((k_i:1) / k_i)),
+  x = vech_i,
   df = 100,
-  vector = TRUE
+  list = FALSE,
+  vec = TRUE
 )
 testthat::test_that("multiNorm-rvcov_wishart_of_vechsigmacap means", {
   testthat::expect_true(
@@ -15,7 +18,7 @@ testthat::test_that("multiNorm-rvcov_wishart_of_vechsigmacap means", {
           colMeans(data_i),
           digits = 2
         ) - round(
-          vech(
+          as.vector(
             toeplitz((k_i:1) / k_i)
           ),
           digits = 2
@@ -27,13 +30,20 @@ testthat::test_that("multiNorm-rvcov_wishart_of_vechsigmacap means", {
 # coverage
 data_i <- rvcov_wishart_of_vechsigmacap(
   rcap = 10,
-  x = vech(toeplitz((k_i:1) / k_i)),
+  x = vech_i,
   df = 10,
-  vector = FALSE
+  vec = TRUE
+)
+data_i <- rvcov_wishart_of_vechsigmacap(
+  rcap = 10,
+  x = vech_i,
+  df = 10,
+  list = TRUE
 )
 # clean environment
 rm(
   tol_i,
   k_i,
-  data_i
+  data_i,
+  vech_i
 )

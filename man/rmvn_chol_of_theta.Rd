@@ -18,7 +18,7 @@ Vector of parameters
     \boldsymbol{\theta}
     =
     \{
-      \boldsymbol{\mu}
+      \boldsymbol{\mu} ,
       \mathrm{vech} \left( \boldsymbol{\Sigma} \right)
     \}^{\prime}
   }.}
@@ -41,13 +41,10 @@ from the Multivariate Normal Distribution
 Using the Cholesky Decomposition - Parameter Vector theta Input
 }
 \examples{
-x <- rmvn_chol_of_theta(
-  n = 100,
+rmvn_chol_of_theta(
+  n = 5,
   x = c(0, 0, 1, 0.5, 1)
 )
-
-colMeans(x)
-cov(x)
 }
 \seealso{
 Other Multivariate Normal Distribution Functions: 
@@ -57,7 +54,8 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rmvn_chol_of_vechsrhocap}()},
 \code{\link{rmvn_chol}()},
 \code{\link{rvcov_wishart_of_vechsigmacap}()},
-\code{\link{rvcov_wishart}()}
+\code{\link{rvcov_wishart}()},
+\code{\link{theta_helper}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

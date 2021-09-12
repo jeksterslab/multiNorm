@@ -1,9 +1,11 @@
 ## ---- test-multiNorm-rmvn_chol_of_theta
 tol_i <- 0.05
 k_i <- sample(x = 2:10, size = 1)
+vech_i <- toeplitz((k_i:1) / k_i)
+vech_i <- vech_i[lower.tri(vech_i, diag = TRUE)]
 theta_i <- c(
   rep(x = 0, times = k_i),
-  vech(toeplitz((k_i:1) / k_i))
+  vech_i
 )
 data_i <- rmvn_chol_of_theta(
   n = 10000,
@@ -53,5 +55,6 @@ rm(
   tol_i,
   k_i,
   theta_i,
-  data_i
+  data_i,
+  vech_i
 )

@@ -6,9 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Generate Sample Mean Vector
-from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Parameter Vector theta Input — rmeans_mvn_chol_of_theta • multiNorm</title>
+<title>Helper Function to Convert a Vector of Parameters
+to the Mean Vector and Covariance Matrix — theta_helper • multiNorm</title>
 
 
 <!-- jquery -->
@@ -41,12 +40,10 @@ Using the Cholesky Decomposition - Parameter Vector theta Input — rmeans_mvn_c
 
 
 
-<meta property="og:title" content="Generate Sample Mean Vector
-from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Parameter Vector theta Input — rmeans_mvn_chol_of_theta" />
-<meta property="og:description" content="Generate Sample Mean Vector
-from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Parameter Vector theta Input" />
+<meta property="og:title" content="Helper Function to Convert a Vector of Parameters
+to the Mean Vector and Covariance Matrix — theta_helper" />
+<meta property="og:description" content="Helper Function to Convert a Vector of Parameters
+to the Mean Vector and Covariance Matrix" />
 
 
 
@@ -136,29 +133,22 @@ Using the Cholesky Decomposition - Parameter Vector theta Input" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Generate Sample Mean Vector
-from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Parameter Vector theta Input</h1>
+    <h1>Helper Function to Convert a Vector of Parameters
+to the Mean Vector and Covariance Matrix</h1>
     
-    <div class="hidden name"><code>rmeans_mvn_chol_of_theta.Rd</code></div>
+    <div class="hidden name"><code>theta_helper.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Generate Sample Mean Vector
-from the Multivariate Normal Distribution
-Using the Cholesky Decomposition - Parameter Vector theta Input</p>
+    <p>Helper Function to Convert a Vector of Parameters
+to the Mean Vector and Covariance Matrix</p>
     </div>
 
-    <pre class="usage"><span class='fu'>rmeans_mvn_chol_of_theta</span><span class='op'>(</span><span class='va'>rcap</span>, <span class='va'>x</span>, <span class='va'>n</span>, varnames <span class='op'>=</span> <span class='cn'>NULL</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>theta_helper</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>rcap</th>
-      <td><p>Positive integer.
-<code>R</code> variates.</p></td>
-    </tr>
     <tr>
       <th>x</th>
       <td><p>Numeric vector.
@@ -172,60 +162,35 @@ Vector of parameters
     \}^{\prime}
   \).</p></td>
     </tr>
-    <tr>
-      <th>n</th>
-      <td><p>Positive integer.
-Sample size.</p></td>
-    </tr>
-    <tr>
-      <th>varnames</th>
-      <td><p>Character vector
-Optional variable names.</p></td>
-    </tr>
-    <tr>
-      <th>list</th>
-      <td><p>Logical.
-If <code>list = TRUE</code>,
-returns a list where each element is a vector of means.
-If <code>list = FALSE</code>,
-returns a matrix where each row is a vector of means.</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list (<code>list = TRUE</code>) or a matrix (<code>list = FALSE</code>).</p>
-    <h2 class="hasAnchor" id="dependencies"><a class="anchor" href="#dependencies"></a>Dependencies</h2>
-
-    <p><code><a href='rmeans_mvn_chol.html'>rmeans_mvn_chol()</a></code>
-<code><a href='rmvn_chol.html'>rmvn_chol()</a></code></p>
+    <p>A list with elements <code>mu</code> and <code>sigmacap</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other Multivariate Normal Distribution Functions: 
+<code><a href='rmeans_mvn_chol_of_theta.html'>rmeans_mvn_chol_of_theta</a>()</code>,
 <code><a href='rmeans_mvn_chol.html'>rmeans_mvn_chol</a>()</code>,
 <code><a href='rmvn_chol_of_rhocap.html'>rmvn_chol_of_rhocap</a>()</code>,
 <code><a href='rmvn_chol_of_theta.html'>rmvn_chol_of_theta</a>()</code>,
 <code><a href='rmvn_chol_of_vechsrhocap.html'>rmvn_chol_of_vechsrhocap</a>()</code>,
 <code><a href='rmvn_chol.html'>rmvn_chol</a>()</code>,
 <code><a href='rvcov_wishart_of_vechsigmacap.html'>rvcov_wishart_of_vechsigmacap</a>()</code>,
-<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code>,
-<code><a href='theta_helper.html'>theta_helper</a>()</code></p></div>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p>Ivan Jacob Agaloos Pesigan</p>
+<code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>rmeans_mvn_chol_of_theta</span><span class='op'>(</span>
-  rcap <span class='op'>=</span> <span class='fl'>5</span>,
-  n <span class='op'>=</span> <span class='fl'>100</span>,
+    <pre class="examples"><div class='input'><span class='fu'>theta_helper</span><span class='op'>(</span>
   x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0.5</span>, <span class='fl'>1</span><span class='op'>)</span>
 <span class='op'>)</span>
-</div><div class='output co'>#&gt;             [,1]        [,2]
-#&gt; [1,] -0.05536994 -0.18902650
-#&gt; [2,]  0.06289820 -0.01375851
-#&gt; [3,]  0.20650249  0.09869579
-#&gt; [4,] -0.16309894 -0.03452461
-#&gt; [5,]  0.05124269 -0.05353985</div></pre>
+</div><div class='output co'>#&gt; $mu
+#&gt; [1] 0 0
+#&gt; 
+#&gt; $sigmacap
+#&gt;      [,1] [,2]
+#&gt; [1,]  1.0  0.5
+#&gt; [2,]  0.5  1.0
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

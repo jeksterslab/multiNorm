@@ -6,7 +6,7 @@
 from the Wishart Distribution - Half-Vectorization
 of the Covariance Matrix Input}
 \usage{
-rvcov_wishart_of_vechsigmacap(rcap, x, df, vector = FALSE)
+rvcov_wishart_of_vechsigmacap(rcap, x, df, list = TRUE, vec = FALSE)
 }
 \arguments{
 \item{rcap}{Positive integer.
@@ -21,16 +21,26 @@ Half-vectorization of the covariance matrix
 Parameter.
 Degrees of freedom.}
 
-\item{vector}{Logical.
-If \code{vector = TRUE},
-returns the half-vectorization of the covariance matrix
+\item{list}{Logical.
+If \code{list = TRUE},
+returns a list where each element is a covariance matrix.
+If \code{list = FALSE},
+returns a matrix where each row corresponds to
+the vectorization of the output matrix (\code{vec = TRUE}) or
+the half-vectorization of the output matrix (\code{vec = FALSE})
+If \code{list = FALSE}}
+
+\item{vec}{Logical.
+This is only evaluated when \code{list = FALSE}.
+If \code{vec = TRUE},
+returns the vectorization of the covariance matrix
 for each \code{R} variate.
-If \code{vector = FALSE},
-returns the covariance matrix
+If \code{vec = FALSE},
+returns the half-covariance matrix
 for each \code{R} variate.}
 }
 \value{
-A list (\code{vector = FALSE}) or matrix (\code{vector = TRUE}).
+A list (\code{list = TRUE}) or matrix (\code{list = FALSE}).
 }
 \description{
 Generate Sample Covariances
@@ -40,20 +50,16 @@ of the Covariance Matrix Input
 \section{Dependencies}{
 \itemize{
 \item \code{\link[=sym_of_vech]{sym_of_vech()}}
-\item \code{\link[=vech]{vech()}} (test)
-\item \code{\link[=vechnames]{vechnames()}} (test)
 }
 }
 
 \examples{
-x <- rvcov_wishart_of_vechsigmacap(
-  rcap = 100,
+rvcov_wishart_of_vechsigmacap(
+  rcap = 5,
   x = c(1, 0.5, 1),
   df = 100,
-  vector = TRUE
+  list = FALSE
 )
-
-colMeans(x)
 }
 \seealso{
 Other Multivariate Normal Distribution Functions: 
@@ -63,7 +69,8 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rmvn_chol_of_theta}()},
 \code{\link{rmvn_chol_of_vechsrhocap}()},
 \code{\link{rmvn_chol}()},
-\code{\link{rvcov_wishart}()}
+\code{\link{rvcov_wishart}()},
+\code{\link{theta_helper}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

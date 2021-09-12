@@ -50,9 +50,10 @@ rcap_i <- 10
 k_i <- sample(x = 2:10, size = 1)
 mu_i <- rep(x = 0, times = k_i)
 sigmacap_i <- toeplitz((k_i:1) / k_i)
+vech_i <- vech(sigmacap_i)
 theta_i <- c(
   mu_i,
-  vech(sigmacap_i)
+  vech_i
 )
 mu_i
 sigmacap_i
@@ -85,16 +86,4 @@ data_i <- rmeans_mvn_chol_of_theta(
 data_i
 colMeans(data_i)
 cov(data_i)
-```
-
-<<echo = FALSE>>=
-rm(
-  data_i,
-  k_i,
-  mu_i,
-  n_i,
-  rcap_i,
-  sigmacap_i,
-  theta_i
-)
 ```

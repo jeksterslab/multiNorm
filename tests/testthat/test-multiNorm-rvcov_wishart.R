@@ -5,7 +5,8 @@ data_i <- rvcov_wishart(
   rcap = 10000,
   sigmacap = toeplitz((k_i:1) / k_i),
   df = 100,
-  vector = TRUE
+  list = FALSE,
+  vec = TRUE
 )
 testthat::test_that("multiNorm-rvcov_wishart means", {
   testthat::expect_true(
@@ -15,7 +16,7 @@ testthat::test_that("multiNorm-rvcov_wishart means", {
           colMeans(data_i),
           digits = 2
         ) - round(
-          vech(
+          as.vector(
             toeplitz((k_i:1) / k_i)
           ),
           digits = 2
@@ -29,7 +30,22 @@ data_i <- rvcov_wishart(
   rcap = 10,
   sigmacap = toeplitz((k_i:1) / k_i),
   df = 10,
-  vector = FALSE
+  list = FALSE,
+  vec = FALSE
+)
+data_i <- rvcov_wishart(
+  rcap = 10,
+  sigmacap = toeplitz((k_i:1) / k_i),
+  df = 10,
+  list = TRUE,
+  vec = TRUE
+)
+data_i <- rvcov_wishart(
+  rcap = 10,
+  sigmacap = toeplitz((k_i:1) / k_i),
+  df = 10,
+  list = TRUE,
+  vec = FALSE
 )
 # clean environment
 rm(
