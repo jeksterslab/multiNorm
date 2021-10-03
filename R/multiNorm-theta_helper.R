@@ -25,6 +25,7 @@ theta_helper <- function(x) {
   stopifnot(is.vector(x))
   q <- length(x)
   k <- 0.5 * (sqrt(8 * q + 9) - 3)
+  # sigmacap is always a matrix even if dimension is 1 x 1
   sigmacap <- matrix(
     data = 0,
     nrow = k,

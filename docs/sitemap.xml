@@ -4,7 +4,31 @@
     <loc>https://github.com/jeksterslab/multiNorm//index.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/dcap.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/grad_l_mvn.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/grad_l_mvn_generic.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/hess_l_mvn.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/hess_l_mvn_generic.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/l_mvn.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/l_mvn_generic.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/multiNorm.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/negl_mvn.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/rmeans_mvn_chol.html</loc>

@@ -1,11 +1,6 @@
 \documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{hyperref}
 
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
+\input{latex/preamble/preamble}
 
 \title{Generating Sample Mean Vectors from the Multivariate Normal Distribution Using the Cholesky Decomposition}
 \author{Ivan Jacob Agaloos Pesigan}

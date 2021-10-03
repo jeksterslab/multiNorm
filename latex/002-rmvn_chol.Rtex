@@ -1,11 +1,6 @@
 \documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{hyperref}
 
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
+\input{latex/preamble/preamble}
 
 \title{Generating Multivariate Normal Data Using the Cholesky Decomposition}
 \author{Ivan Jacob Agaloos Pesigan}
@@ -59,6 +54,7 @@ vechs_i
 \section{rmvn\_chol}
 
 <<>>=
+set.seed(42)
 data_i <- rmvn_chol(
   n = n_i,
   mu = mu_i,

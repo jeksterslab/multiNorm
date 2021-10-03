@@ -57,6 +57,13 @@ rmeans_mvn_chol_of_theta(
 }
 \seealso{
 Other Multivariate Normal Distribution Functions: 
+\code{\link{grad_l_mvn_generic}()},
+\code{\link{grad_l_mvn}()},
+\code{\link{hess_l_mvn_generic}()},
+\code{\link{hess_l_mvn}()},
+\code{\link{l_mvn_generic}()},
+\code{\link{l_mvn}()},
+\code{\link{negl_mvn}()},
 \code{\link{rmeans_mvn_chol}()},
 \code{\link{rmvn_chol_of_rhocap}()},
 \code{\link{rmvn_chol_of_theta}()},
