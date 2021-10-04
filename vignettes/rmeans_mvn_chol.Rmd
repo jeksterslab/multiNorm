@@ -22,26 +22,43 @@ library(multiNorm)
 The multivariate normal distribution is given by
 
 \begin{equation}
-    \mathcal{N}
+    \mathbf{x}
+    \sim
+    \mathcal{N}_{k}
     \left(
       \boldsymbol{\mu},
       \boldsymbol{\Sigma}
     \right)
-    \label{eq:mvn}
+    \label{eq:multiNorm-mvn}
 \end{equation}
 
+\noindent where
+$\mathbf{x} = \left\{ X_1, \dots, X_k \right\}^{\prime}$
+is a vector of random variables,
+$\boldsymbol{\mu}$ is a $k \times 1$
+vector of means of the random variables,
+and
+$\boldsymbol{\Sigma}$ is a $k \times k$
+matrix of variances on the diagonals
+and covariances on the off-diagonals
+of the random variables.
+
 When data is randomly sampled from the multivariate normal distribution,
-the sample mean vector $\bar{\mathbf{x}}_{n}$,
+the distribution of the sample mean vector $\bar{\mathbf{x}}_{n}$,
 where $n$ is the sample size,
 is given by
 
 \begin{equation}
-    \bar{\mathbf{x}}_{n} \sim \mathcal{N} \left( \boldsymbol{\mu}, n^{-1} \boldsymbol{\Sigma} \right)
-    \label{eq:means-mvn}
+    \bar{\mathbf{x}}_{n}
+    \sim
+    \mathcal{N}
+    \left(
+    \boldsymbol{\mu},
+    n^{-1}
+    \boldsymbol{\Sigma}
+    \right)
+    \label{eq:multiNorm-means_mvn}
 \end{equation}
-
-Sample means can be generated from the multivariate normal distribution
-using Equation \ref{eq:means-mvn}.
 
 ```{r}
 set.seed(42)

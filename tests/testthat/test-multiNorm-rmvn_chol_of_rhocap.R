@@ -5,7 +5,7 @@ data_i <- rmvn_chol_of_rhocap(
   n = 10000,
   x = toeplitz((k_i:1) / k_i)
 )
-testthat::test_that("multiNorm-rmvn_chol_of_rhocap means", {
+testthat::test_that("test-multiNorm-rmvn_chol_of_rhocap means", {
   testthat::expect_true(
     all(
       abs(
@@ -17,7 +17,7 @@ testthat::test_that("multiNorm-rmvn_chol_of_rhocap means", {
     )
   )
 })
-testthat::test_that("multiNorm-rmvn_chol_of_rhocap covariances", {
+testthat::test_that("test-multiNorm-rmvn_chol_of_rhocap covariances", {
   testthat::expect_true(
     all(
       abs(

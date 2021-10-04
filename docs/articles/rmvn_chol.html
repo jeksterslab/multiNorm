@@ -102,18 +102,24 @@
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">multiNorm</span><span class="op">)</span></code></pre></div>
 <p>The multivariate normal distribution is given by</p>
 <p><span class="math display">\[\begin{equation}
-    \mathcal{N}
+    \mathbf{x}
+    \sim
+    \mathcal{N}_{k}
     \left(
       \boldsymbol{\mu},
       \boldsymbol{\Sigma}
     \right)
-    \label{eq:mvn}
+    \label{eq:multiNorm-mvn}
 \end{equation}\]</span></p>
-<p>where <span class="math inline">\(\boldsymbol{\mu}\)</span> is a <span class="math inline">\(k \times 1\)</span> vector of means, and <span class="math inline">\(\boldsymbol{\Sigma}\)</span> is a <span class="math inline">\(k \times k\)</span> matrix of variances on the diagonals and covariances on the off-diagonals.</p>
+<p>where <span class="math inline">\(\mathbf{x} = \left\{ X_1, \dots, X_k \right\}^{\prime}\)</span> is a vector of random variables, <span class="math inline">\(\boldsymbol{\mu}\)</span> is a <span class="math inline">\(k \times 1\)</span> vector of means of the random variables, and <span class="math inline">\(\boldsymbol{\Sigma}\)</span> is a <span class="math inline">\(k \times k\)</span> matrix of variances on the diagonals and covariances on the off-diagonals of the random variables.</p>
 <p>Multivariate normal data can be generated using</p>
 <p><span class="math display">\[\begin{equation}
-  \mathbf{Z} \mathbf{Q} + 1_n \boldsymbol{\mu}
-    \label{eq:rmvn-chol}
+    \mathbf{Z}
+    \mathbf{Q}
+    +
+    1_n
+    \boldsymbol{\mu}
+    \label{eq:multiNorm-rmvn-chol}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(\mathbf{Z}\)</span> is an <span class="math inline">\(n \times k\)</span> matrix of random variates from the standard normal distribution, <span class="math inline">\(\mathbf{Q}\)</span> is the upper triangular factor of the Cholesky decomposition given by <span class="math inline">\(\boldsymbol{\Sigma} = \mathbf{Q}^{\prime} \mathbf{Q}\)</span> where <span class="math inline">\(\boldsymbol{\Sigma}\)</span> is the covariance matrix, <span class="math inline">\(1_n\)</span> is an <span class="math inline">\(n \times 1\)</span> column vector of ones, and <span class="math inline">\(\boldsymbol{\mu}\)</span> is the mean vector.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -149,17 +155,18 @@
 <h2 class="hasAnchor">
 <a href="#rmvn_chol" class="anchor"></a>rmvn_chol</h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">data_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rmvn_chol.html">rmvn_chol</a></span><span class="op">(</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span>
+<span class="va">data_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rmvn_chol.html">rmvn_chol</a></span><span class="op">(</span>
   n <span class="op">=</span> <span class="va">n_i</span>,
   mu <span class="op">=</span> <span class="va">mu_i</span>,
   sigmacap <span class="op">=</span> <span class="va">sigmacap_i</span>
 <span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colMeans</a></span><span class="op">(</span><span class="va">data_i</span><span class="op">)</span>
-<span class="co">#&gt; [1] 0.0005710992 0.0002364086</span>
+<span class="co">#&gt; [1] 0.0005737398 0.0002380194</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cov</a></span><span class="op">(</span><span class="va">data_i</span><span class="op">)</span>
 <span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 1.0020690 0.8757114</span>
-<span class="co">#&gt; [2,] 0.8757114 1.0010073</span></code></pre></div>
+<span class="co">#&gt; [1,] 1.0020692 0.8757109</span>
+<span class="co">#&gt; [2,] 0.8757109 1.0010066</span></code></pre></div>
 </div>
 <div id="rmvn_theta" class="section level2">
 <h2 class="hasAnchor">
@@ -174,7 +181,7 @@
   x <span class="op">=</span> <span class="va">theta_i</span>
 <span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colMeans</a></span><span class="op">(</span><span class="va">data_i</span><span class="op">)</span>
-<span class="co">#&gt; [1] 0.0010693024 0.0005817952</span>
+<span class="co">#&gt; [1] 0.0010693816 0.0005820637</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cov</a></span><span class="op">(</span><span class="va">data_i</span><span class="op">)</span>
 <span class="co">#&gt;           [,1]      [,2]</span>
 <span class="co">#&gt; [1,] 0.9992231 0.8737345</span>
@@ -189,11 +196,11 @@
   x <span class="op">=</span> <span class="va">rhocap_i</span>
 <span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colMeans</a></span><span class="op">(</span><span class="va">data_i</span><span class="op">)</span>
-<span class="co">#&gt; [1] 0.001783648 0.001572559</span>
+<span class="co">#&gt; [1] 0.001784521 0.001572401</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cov</a></span><span class="op">(</span><span class="va">data_i</span><span class="op">)</span>
 <span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 0.9994832 0.8730244</span>
-<span class="co">#&gt; [2,] 0.8730244 0.9987102</span></code></pre></div>
+<span class="co">#&gt; [1,] 0.9994819 0.8730239</span>
+<span class="co">#&gt; [2,] 0.8730239 0.9987104</span></code></pre></div>
 </div>
 <div id="rmvn_chol_of_vechsrhocap" class="section level2">
 <h2 class="hasAnchor">
@@ -204,11 +211,11 @@
   x <span class="op">=</span> <span class="va">vechs_i</span>
 <span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colMeans</a></span><span class="op">(</span><span class="va">data_i</span><span class="op">)</span>
-<span class="co">#&gt; [1] 0.001489872 0.001378077</span>
+<span class="co">#&gt; [1] 0.001491365 0.001378957</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cov</a></span><span class="op">(</span><span class="va">data_i</span><span class="op">)</span>
 <span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,] 1.0012744 0.8756157</span>
-<span class="co">#&gt; [2,] 0.8756157 1.0016384</span></code></pre></div>
+<span class="co">#&gt; [1,] 1.0012743 0.8756153</span>
+<span class="co">#&gt; [2,] 0.8756153 1.0016380</span></code></pre></div>
 </div>
   </div>
 

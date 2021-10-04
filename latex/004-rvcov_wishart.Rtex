@@ -22,23 +22,27 @@ source(
 
 The multivariate normal distribution is given by
 
-\input{latex/equations/mvn}
+\input{latex/equations/multiNorm-mvn}
+
+\input{latex/equations/multiNorm-mvn-where}
 
 The Wishart distribution is given by
 
-\input{latex/equations/wishart}
+\input{latex/equations/multiNorm-wishart}
+
+\input{latex/equations/multiNorm-wishart-where}
 
 When data is randomly sampled from the multivariate normal distribution,
-the unbiased sample covariance matrix $S_{n - 1}$,
+the distribution of the unbiased sample covariance matrix $S_{n - 1}$,
 where $n$ is the sample size
 and $n - 1$ is the degrees of freedom,
 is given by
 
-\input{latex/equations/vcov_wishart}
+\input{latex/equations/multiNorm-vcov_wishart}
 
 Sample covariances can be generated from the Wishart distribution using
 
-\input{latex/equations/vcov_inv_wishart}
+\input{latex/equations/multiNorm-vcov_inv_wishart}
 
 <<>>=
 set.seed(42)

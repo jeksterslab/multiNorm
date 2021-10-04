@@ -1,5 +1,5 @@
 ## ---- test-multiNorm-grad_l_mvn-univariate
-tol_i <- 0.01
+tol_i <- 0.05
 n_i <- 5
 mu_i <- 0
 sigmacap_i <- matrix(

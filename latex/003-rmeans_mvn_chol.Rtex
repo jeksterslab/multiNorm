@@ -22,17 +22,16 @@ source(
 
 The multivariate normal distribution is given by
 
-\input{latex/equations/mvn}
+\input{latex/equations/multiNorm-mvn}
+
+\input{latex/equations/multiNorm-mvn-where}
 
 When data is randomly sampled from the multivariate normal distribution,
 the sample mean vector $\bar{\mathbf{x}}_{n}$,
 where $n$ is the sample size,
 is given by
 
-\input{latex/equations/means_mvn}
-
-Sample means can be generated from the multivariate normal distribution
-using Equation \ref{eq:means-mvn}.
+\input{latex/equations/multiNorm-means_mvn}
 
 <<>>=
 set.seed(42)

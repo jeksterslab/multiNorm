@@ -7,7 +7,7 @@ data_i <- rmvn_chol_of_vechsrhocap(
   n = 10000,
   x = vechs_i
 )
-testthat::test_that("multiNorm-rmvn_chol_of_vechsrhocap means", {
+testthat::test_that("test-multiNorm-rmvn_chol_of_vechsrhocap means", {
   testthat::expect_true(
     all(
       abs(
@@ -19,7 +19,7 @@ testthat::test_that("multiNorm-rmvn_chol_of_vechsrhocap means", {
     )
   )
 })
-testthat::test_that("multiNorm-rmvn_chol_of_vechsrhocap covariances", {
+testthat::test_that("test-multiNorm-rmvn_chol_of_vechsrhocap covariances", {
   testthat::expect_true(
     all(
       abs(

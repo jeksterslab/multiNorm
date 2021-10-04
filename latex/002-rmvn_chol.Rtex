@@ -22,12 +22,16 @@ source(
 
 The multivariate normal distribution is given by
 
-\input{latex/equations/mvn}
+\input{latex/equations/multiNorm-mvn}
+
+\input{latex/equations/multiNorm-mvn-where}
 
 Multivariate normal data can be generated
 using
 
-\input{latex/equations/rmvn_chol}
+\input{latex/equations/multiNorm-rmvn_chol}
+
+\input{latex/equations/multiNorm-rmvn_chol-where}
 
 <<>>=
 set.seed(42)

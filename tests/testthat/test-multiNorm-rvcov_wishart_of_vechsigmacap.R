@@ -10,7 +10,7 @@ data_i <- rvcov_wishart_of_vechsigmacap(
   list = FALSE,
   vec = TRUE
 )
-testthat::test_that("multiNorm-rvcov_wishart_of_vechsigmacap means", {
+testthat::test_that("test-multiNorm-rvcov_wishart_of_vechsigmacap means", {
   testthat::expect_true(
     all(
       abs(

@@ -102,19 +102,28 @@
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">multiNorm</span><span class="op">)</span></code></pre></div>
 <p>The multivariate normal distribution is given by</p>
 <p><span class="math display">\[\begin{equation}
-    \mathcal{N}
+    \mathbf{x}
+    \sim
+    \mathcal{N}_{k}
     \left(
       \boldsymbol{\mu},
       \boldsymbol{\Sigma}
     \right)
-    \label{eq:mvn}
+    \label{eq:multiNorm-mvn}
 \end{equation}\]</span></p>
-<p>When data is randomly sampled from the multivariate normal distribution, the sample mean vector <span class="math inline">\(\bar{\mathbf{x}}_{n}\)</span>, where <span class="math inline">\(n\)</span> is the sample size, is given by</p>
+<p>where <span class="math inline">\(\mathbf{x} = \left\{ X_1, \dots, X_k \right\}^{\prime}\)</span> is a vector of random variables, <span class="math inline">\(\boldsymbol{\mu}\)</span> is a <span class="math inline">\(k \times 1\)</span> vector of means of the random variables, and <span class="math inline">\(\boldsymbol{\Sigma}\)</span> is a <span class="math inline">\(k \times k\)</span> matrix of variances on the diagonals and covariances on the off-diagonals of the random variables.</p>
+<p>When data is randomly sampled from the multivariate normal distribution, the distribution of the sample mean vector <span class="math inline">\(\bar{\mathbf{x}}_{n}\)</span>, where <span class="math inline">\(n\)</span> is the sample size, is given by</p>
 <p><span class="math display">\[\begin{equation}
-    \bar{\mathbf{x}}_{n} \sim \mathcal{N} \left( \boldsymbol{\mu}, n^{-1} \boldsymbol{\Sigma} \right)
-    \label{eq:means-mvn}
+    \bar{\mathbf{x}}_{n}
+    \sim
+    \mathcal{N}
+    \left(
+    \boldsymbol{\mu},
+    n^{-1}
+    \boldsymbol{\Sigma}
+    \right)
+    \label{eq:multiNorm-means_mvn}
 \end{equation}\]</span></p>
-<p>Sample means can be generated from the multivariate normal distribution using Equation .</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span>
 <span class="va">n_i</span> <span class="op">&lt;-</span> <span class="fl">1000</span>

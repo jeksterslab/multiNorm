@@ -8,20 +8,20 @@ theta_i <- theta_helper(
     vech_i
   )
 )
-testthat::test_that("multiNorm-theta_helper means", {
+testthat::test_that("test-multiNorm-theta_helper means", {
   testthat::expect_equal(
     theta_i$mu,
     rep(x = 0, times = k_i)
   )
 })
-testthat::test_that("multiNorm-theta_helper covariances", {
+testthat::test_that("test-multiNorm-theta_helper covariances", {
   testthat::expect_equal(
     theta_i$sigmacap,
     toeplitz((k_i:1) / k_i)
   )
 })
 # expect_error
-testthat::test_that("multiNorm-theta_helper error", {
+testthat::test_that("test-multiNorm-theta_helper error", {
   testthat::expect_error(
     theta_helper(1)
   )

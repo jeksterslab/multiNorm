@@ -11,7 +11,7 @@ data_i <- rmvn_chol_of_theta(
   n = 10000,
   x = theta_i
 )
-testthat::test_that("multiNorm-rmvn_chol_of_theta means", {
+testthat::test_that("test-multiNorm-rmvn_chol_of_theta means", {
   testthat::expect_true(
     all(
       abs(
@@ -23,7 +23,7 @@ testthat::test_that("multiNorm-rmvn_chol_of_theta means", {
     )
   )
 })
-testthat::test_that("multiNorm-rmvn_chol_of_theta covariances", {
+testthat::test_that("test-multiNorm-rmvn_chol_of_theta covariances", {
   testthat::expect_true(
     all(
       abs(

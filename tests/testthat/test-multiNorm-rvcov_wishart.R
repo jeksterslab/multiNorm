@@ -8,7 +8,7 @@ data_i <- rvcov_wishart(
   list = FALSE,
   vec = TRUE
 )
-testthat::test_that("multiNorm-rvcov_wishart means", {
+testthat::test_that("test-multiNorm-rvcov_wishart means", {
   testthat::expect_true(
     all(
       abs(

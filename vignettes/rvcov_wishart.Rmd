@@ -22,52 +22,77 @@ library(multiNorm)
 The multivariate normal distribution is given by
 
 \begin{equation}
-    \mathcal{N}
+    \mathbf{x}
+    \sim
+    \mathcal{N}_{k}
     \left(
       \boldsymbol{\mu},
       \boldsymbol{\Sigma}
     \right)
-    \label{eq:mvn}
+    \label{eq:multiNorm-mvn}
 \end{equation}
 
 \noindent where
+$\mathbf{x} = \left\{ X_1, \dots, X_k \right\}^{\prime}$
+is a vector of random variables,
 $\boldsymbol{\mu}$ is a $k \times 1$
-vector of means,
+vector of means of the random variables,
 and
 $\boldsymbol{\Sigma}$ is a $k \times k$
 matrix of variances on the diagonals
-and covariances on the off-diagonals.
+and covariances on the off-diagonals
+of the random variables.
 
 The Wishart distribution is given by
 
 \begin{equation}
-    \mathcal{W} \left( \mathbf{V}, n \right)
-    \label{eq:wishart}
+    \mathcal{W}_{k}
+    \left(
+    \mathbf{V},
+    n - 1
+    \right)
+    \label{eq:multiNorm-wishart}
 \end{equation}
 
 \noindent where
-$\mathbf{V}$ is a $k \times k$ positive definite matrix,
+$\mathbf{V}$
+is a $k \times k$ positive definite matrix,
 and
-$n$ is the degrees of freedom.
+$n - 1$
+is the degrees of freedom.
 
 When data is randomly sampled from the multivariate normal distribution,
-the unbiased sample covariance matrix $S_{n - 1}$,
+the distribution of the unbiased sample covariance matrix $S_{n - 1}$,
 where $n$ is the sample size
 and $n - 1$ is the degrees of freedom,
 is given by
 
 \begin{equation}
-    \left( n - 1 \right) S_{n - 1}
+    \left(
+    n - 1
+    \right)
+    S_{n - 1}
     \sim
-    \mathcal{W} \left( \boldsymbol{\Sigma}, n - 1 \right)
-    \label{eq:vcov-wishart}
+    \mathcal{W}
+    \left(
+    \boldsymbol{\Sigma},
+    n - 1
+    \right)
+    \label{eq:multiNorm-vcov-wishart}
 \end{equation}
 
 Sample covariances can be generated from the Wishart distribution using
 
 \begin{equation}
-    \left( n - 1 \right)^{-1} \mathcal{W} \left( \boldsymbol{\Sigma}, n - 1 \right)
-    \label{eq:vcov-inv-wishart}
+    \left(
+    n - 1
+    \right)^{-1}
+    \mathcal{W}
+    \left(
+    \boldsymbol{\Sigma},
+    n - 1
+    \right)
+    \label{eq:multiNorm-vcov-inv-wishart}
 \end{equation}
 
 ```{r}

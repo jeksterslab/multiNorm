@@ -41,6 +41,3 @@
 
 # .bashrc_secrets
 .bash_secrets
-multiNorm.Rcheck/
-multiNorm*.tar.gz
-multiNorm*.tgz

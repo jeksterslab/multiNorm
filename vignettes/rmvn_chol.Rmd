@@ -22,41 +22,52 @@ library(multiNorm)
 The multivariate normal distribution is given by
 
 \begin{equation}
-    \mathcal{N}
+    \mathbf{x}
+    \sim
+    \mathcal{N}_{k}
     \left(
       \boldsymbol{\mu},
       \boldsymbol{\Sigma}
     \right)
-    \label{eq:mvn}
+    \label{eq:multiNorm-mvn}
 \end{equation}
 
 \noindent where
+$\mathbf{x} = \left\{ X_1, \dots, X_k \right\}^{\prime}$
+is a vector of random variables,
 $\boldsymbol{\mu}$ is a $k \times 1$
-vector of means,
+vector of means of the random variables,
 and
 $\boldsymbol{\Sigma}$ is a $k \times k$
 matrix of variances on the diagonals
-and covariances on the off-diagonals.
+and covariances on the off-diagonals
+of the random variables.
 
 Multivariate normal data can be generated
 using
 
 \begin{equation}
-  \mathbf{Z} \mathbf{Q} + 1_n \boldsymbol{\mu}
-    \label{eq:rmvn-chol}
+    \mathbf{Z}
+    \mathbf{Q}
+    +
+    1_n
+    \boldsymbol{\mu}
+    \label{eq:multiNorm-rmvn-chol}
 \end{equation}
 
 \noindent where
-$\mathbf{Z}$ is an $n \times k$ matrix of random variates
+$\mathbf{Z}$
+is an
+$n \times k$ matrix of random variates
 from the standard normal distribution,
-$\mathbf{Q}$ is the upper triangular factor
+$\mathbf{Q}$
+is the upper triangular factor
 of the Cholesky decomposition
 given by
 $\boldsymbol{\Sigma} = \mathbf{Q}^{\prime} \mathbf{Q}$
 where $\boldsymbol{\Sigma}$ is the covariance matrix,
 $1_n$ is an $n \times 1$ column vector of ones,
 and $\boldsymbol{\mu}$ is the mean vector.
-
 
 ```{r}
 set.seed(42)
@@ -83,6 +94,7 @@ vechs_i
 ## rmvn\_chol
 
 ```{r}
+set.seed(42)
 data_i <- rmvn_chol(
   n = n_i,
   mu = mu_i,
