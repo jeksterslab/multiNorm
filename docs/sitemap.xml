@@ -7,6 +7,9 @@
     <loc>https://github.com/jeksterslab/multiNorm//reference/dcap.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/diag_of_vech.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/grad_l_mvn.html</loc>
   </url>
   <url>
@@ -17,6 +20,9 @@
   </url>
   <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/hess_l_mvn_generic.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/kcap.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/l_mvn.html</loc>
@@ -47,6 +53,9 @@
   </url>
   <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/rmvn_chol_of_vechsrhocap.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/multiNorm//reference/rvcov_mvn_chol.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/rvcov_wishart.html</loc>

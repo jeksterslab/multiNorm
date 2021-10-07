@@ -68,6 +68,7 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rmvn_chol_of_rhocap}()},
 \code{\link{rmvn_chol_of_theta}()},
 \code{\link{rmvn_chol_of_vechsrhocap}()},
+\code{\link{rvcov_mvn_chol}()},
 \code{\link{rvcov_wishart_of_vechsigmacap}()},
 \code{\link{rvcov_wishart}()},
 \code{\link{theta_helper}()}

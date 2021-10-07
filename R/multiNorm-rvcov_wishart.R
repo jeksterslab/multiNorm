@@ -19,7 +19,6 @@
 #'   returns a matrix where each row corresponds to
 #'   the vectorization of the output matrix (`vec = TRUE`) or
 #'   the half-vectorization of the output matrix (`vec = FALSE`)
-#'   If `list = FALSE`
 #' @param vec Logical.
 #'   This is only evaluated when `list = FALSE`.
 #'   If `vec = TRUE`,

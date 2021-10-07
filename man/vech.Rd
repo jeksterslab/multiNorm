@@ -51,6 +51,8 @@ vech(x)
 \seealso{
 Other Linear Algebra Functions: 
 \code{\link{dcap}()},
+\code{\link{diag_of_vech}()},
+\code{\link{kcap}()},
 \code{\link{sym_of_vechs}()},
 \code{\link{sym_of_vech}()},
 \code{\link{vechnames}()},

@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gradient Vector of the Multivariate Normal Distribution - Generic — grad_l_mvn_generic • multiNorm</title>
+<title>Generate Sample Variance-Covariance Matrix
+from the Multivariate Normal Distribution — rvcov_mvn_chol • multiNorm</title>
 
 
 <!-- jquery -->
@@ -39,10 +40,10 @@
 
 
 
-<meta property="og:title" content="Gradient Vector of the Multivariate Normal Distribution - Generic — grad_l_mvn_generic" />
-<meta property="og:description" content="Calculates gradient vector of the log of the likelihood function
-of the multivariate normal distribution
-for the ith observation." />
+<meta property="og:title" content="Generate Sample Variance-Covariance Matrix
+from the Multivariate Normal Distribution — rvcov_mvn_chol" />
+<meta property="og:description" content="Generate Sample Variance-Covariance Matrix
+from the Multivariate Normal Distribution" />
 
 
 
@@ -132,33 +133,26 @@ for the ith observation." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Gradient Vector of the Multivariate Normal Distribution - Generic</h1>
+    <h1>Generate Sample Variance-Covariance Matrix
+from the Multivariate Normal Distribution</h1>
     
-    <div class="hidden name"><code>grad_l_mvn_generic.Rd</code></div>
+    <div class="hidden name"><code>rvcov_mvn_chol.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Calculates gradient vector of the log of the likelihood function
-of the multivariate normal distribution
-for the ith observation.</p>
+    <p>Generate Sample Variance-Covariance Matrix
+from the Multivariate Normal Distribution</p>
     </div>
 
-    <pre class="usage"><span class='fu'>grad_l_mvn_generic</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>mu</span>, <span class='va'>sigmacap</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>rvcov_mvn_chol</span><span class='op'>(</span><span class='va'>rcap</span>, <span class='va'>sigmacap</span>, <span class='va'>gammacap</span>, <span class='va'>n</span>, list <span class='op'>=</span> <span class='cn'>TRUE</span>, vec <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>Numeric vector of length <code>k</code>.
-The ith vector of observations.</p></td>
-    </tr>
-    <tr>
-      <th>mu</th>
-      <td><p>Numeric vector.
-Parameter.
-Mean vector
-\(\boldsymbol{\mu}\).</p></td>
+      <th>rcap</th>
+      <td><p>Positive integer.
+<code>R</code> variates.</p></td>
     </tr>
     <tr>
       <th>sigmacap</th>
@@ -167,14 +161,48 @@ Parameter.
 Covariance matrix
 \(\boldsymbol{\Sigma}\).</p></td>
     </tr>
+    <tr>
+      <th>gammacap</th>
+      <td><p>Numeric matrix.
+Parameter.
+Asymptotic covariance matrix of the covariance matrix
+\(\boldsymbol{\Gamma}\).</p></td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td><p>Positive integer.
+Sample size.</p></td>
+    </tr>
+    <tr>
+      <th>list</th>
+      <td><p>Logical.
+If <code>list = TRUE</code>,
+returns a list where each element is a covariance matrix.
+If <code>list = FALSE</code>,
+returns a matrix where each row corresponds to
+the vectorization of the output matrix (<code>vec = TRUE</code>) or
+the half-vectorization of the output matrix (<code>vec = FALSE</code>)</p></td>
+    </tr>
+    <tr>
+      <th>vec</th>
+      <td><p>Logical.
+This is only evaluated when <code>list = FALSE</code>.
+If <code>vec = TRUE</code>,
+returns the vectorization of the covariance matrix
+for each <code>R</code> variate.
+If <code>vec = FALSE</code>,
+returns the half-covariance matrix
+for each <code>R</code> variate.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector.</p>
+    <p>A list (<code>vec = FALSE</code>) or matrix (<code>vec = TRUE</code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other Multivariate Normal Distribution Functions: 
+<code><a href='grad_l_mvn_generic.html'>grad_l_mvn_generic</a>()</code>,
 <code><a href='grad_l_mvn.html'>grad_l_mvn</a>()</code>,
 <code><a href='hess_l_mvn_generic.html'>hess_l_mvn_generic</a>()</code>,
 <code><a href='hess_l_mvn.html'>hess_l_mvn</a>()</code>,
@@ -187,51 +215,57 @@ Covariance matrix
 <code><a href='rmvn_chol_of_theta.html'>rmvn_chol_of_theta</a>()</code>,
 <code><a href='rmvn_chol_of_vechsrhocap.html'>rmvn_chol_of_vechsrhocap</a>()</code>,
 <code><a href='rmvn_chol.html'>rmvn_chol</a>()</code>,
-<code><a href='rvcov_mvn_chol.html'>rvcov_mvn_chol</a>()</code>,
 <code><a href='rvcov_wishart_of_vechsigmacap.html'>rvcov_wishart_of_vechsigmacap</a>()</code>,
 <code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code>,
 <code><a href='theta_helper.html'>theta_helper</a>()</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Ivan Jacob Agaloos Pesigan</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>n</span> <span class='op'>&lt;-</span> <span class='fl'>5</span>
-<span class='va'>mu</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
-<span class='va'>sigmacap</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>
-  data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
-    <span class='fl'>1</span>, <span class='fl'>0.5</span>, <span class='fl'>0.5</span>, <span class='fl'>1</span>
-  <span class='op'>)</span>,
+    <pre class="examples"><div class='input'><span class='va'>sigmacap</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>
+  data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>0.5</span>, <span class='fl'>0.5</span>, <span class='fl'>1</span><span class='op'>)</span>,
   nrow <span class='op'>=</span> <span class='fl'>2</span>
 <span class='op'>)</span>
-
-<span class='va'>xcap</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span><span class='op'>(</span>
-    <span class='fu'><a href='rmvn_chol.html'>rmvn_chol</a></span><span class='op'>(</span>
-      n <span class='op'>=</span> <span class='va'>n</span>,
-      mu <span class='op'>=</span> <span class='va'>mu</span>,
-      sigmacap <span class='op'>=</span> <span class='va'>sigmacap</span>
-    <span class='op'>)</span>
-  <span class='op'>)</span>
+<span class='va'>gammacap</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>
+  data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
+    <span class='fl'>2.00</span>, <span class='fl'>1.00</span>, <span class='fl'>0.50</span>,
+    <span class='fl'>1.00</span>, <span class='fl'>1.25</span>, <span class='fl'>1.00</span>,
+    <span class='fl'>0.50</span>, <span class='fl'>1.00</span>, <span class='fl'>2.00</span>
+  <span class='op'>)</span>,
+  nrow <span class='op'>=</span> <span class='fl'>3</span>
 <span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span>
-  X <span class='op'>=</span> <span class='va'>xcap</span>,
-  FUN <span class='op'>=</span> <span class='va'>grad_l_mvn_generic</span>,
-  mu <span class='op'>=</span> <span class='va'>mu</span>,
-  sigmacap <span class='op'>=</span> <span class='va'>sigmacap</span>
+<span class='fu'>rvcov_mvn_chol</span><span class='op'>(</span>
+  rcap <span class='op'>=</span> <span class='fl'>5</span>,
+  sigmacap <span class='op'>=</span> <span class='va'>sigmacap</span>,
+  gammacap <span class='op'>=</span> <span class='va'>gammacap</span>,
+  n <span class='op'>=</span> <span class='fl'>100</span>
 <span class='op'>)</span>
-</div><div class='output co'>#&gt; $V1
-#&gt; [1]  0.5219108 -2.1512204 -0.5304712 -0.4560785  1.6472079
+</div><div class='output co'>#&gt; [[1]]
+#&gt;           [,1]      [,2]
+#&gt; [1,] 0.8379029 0.4582986
+#&gt; [2,] 0.4582986 0.9815684
 #&gt; 
-#&gt; $V2
-#&gt; [1]  0.9303661 -0.6027681 -0.2338761  0.1058716 -0.4850020
+#&gt; [[2]]
+#&gt;           [,1]      [,2]
+#&gt; [1,] 1.1196686 0.4857716
+#&gt; [2,] 0.4857716 0.8681049
 #&gt; 
-#&gt; $V3
-#&gt; [1]  2.09539462 -0.06073945  1.52867264  0.53939354 -0.66482203
+#&gt; [[3]]
+#&gt;           [,1]      [,2]
+#&gt; [1,] 1.0115569 0.4809326
+#&gt; [2,] 0.4809326 1.1770768
 #&gt; 
-#&gt; $V4
-#&gt; [1] -1.9444885  0.6269982  1.2238511 -0.5525241 -0.4701033
+#&gt; [[4]]
+#&gt;           [,1]      [,2]
+#&gt; [1,] 0.8154286 0.4852202
+#&gt; [2,] 0.4852202 1.1126564
 #&gt; 
-#&gt; $V5
-#&gt; [1]  1.0401683 -1.0554827 -0.1256916 -0.4312130 -0.1096448
+#&gt; [[5]]
+#&gt;           [,1]      [,2]
+#&gt; [1,] 0.8663693 0.4390134
+#&gt; [2,] 0.4390134 1.0763612
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

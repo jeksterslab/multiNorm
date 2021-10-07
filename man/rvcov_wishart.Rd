@@ -26,8 +26,7 @@ returns a list where each element is a covariance matrix.
 If \code{list = FALSE},
 returns a matrix where each row corresponds to
 the vectorization of the output matrix (\code{vec = TRUE}) or
-the half-vectorization of the output matrix (\code{vec = FALSE})
-If \code{list = FALSE}}
+the half-vectorization of the output matrix (\code{vec = FALSE})}
 
 \item{vec}{Logical.
 This is only evaluated when \code{list = FALSE}.
@@ -75,6 +74,7 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rmvn_chol_of_theta}()},
 \code{\link{rmvn_chol_of_vechsrhocap}()},
 \code{\link{rmvn_chol}()},
+\code{\link{rvcov_mvn_chol}()},
 \code{\link{rvcov_wishart_of_vechsigmacap}()},
 \code{\link{theta_helper}()}
 }

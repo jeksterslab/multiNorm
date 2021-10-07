@@ -180,8 +180,7 @@ returns a list where each element is a covariance matrix.
 If <code>list = FALSE</code>,
 returns a matrix where each row corresponds to
 the vectorization of the output matrix (<code>vec = TRUE</code>) or
-the half-vectorization of the output matrix (<code>vec = FALSE</code>)
-If <code>list = FALSE</code></p></td>
+the half-vectorization of the output matrix (<code>vec = FALSE</code>)</p></td>
     </tr>
     <tr>
       <th>vec</th>
@@ -222,6 +221,7 @@ for each <code>R</code> variate.</p></td>
 <code><a href='rmvn_chol_of_theta.html'>rmvn_chol_of_theta</a>()</code>,
 <code><a href='rmvn_chol_of_vechsrhocap.html'>rmvn_chol_of_vechsrhocap</a>()</code>,
 <code><a href='rmvn_chol.html'>rmvn_chol</a>()</code>,
+<code><a href='rvcov_mvn_chol.html'>rvcov_mvn_chol</a>()</code>,
 <code><a href='rvcov_wishart.html'>rvcov_wishart</a>()</code>,
 <code><a href='theta_helper.html'>theta_helper</a>()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
@@ -236,11 +236,11 @@ for each <code>R</code> variate.</p></td>
   list <span class='op'>=</span> <span class='cn'>FALSE</span>
 <span class='op'>)</span>
 </div><div class='output co'>#&gt;           [,1]      [,2]      [,3]
-#&gt; [1,] 0.8356813 0.4275074 0.9994500
-#&gt; [2,] 0.8363428 0.4718437 0.7904581
-#&gt; [3,] 0.9954248 0.3363625 0.8117160
-#&gt; [4,] 0.8585182 0.4044600 1.0270880
-#&gt; [5,] 1.0273628 0.3254532 0.6621099</div></pre>
+#&gt; [1,] 1.0273628 0.3254532 0.6621099
+#&gt; [2,] 1.0593812 0.5758339 1.0017849
+#&gt; [3,] 0.9755724 0.5082354 1.0175712
+#&gt; [4,] 1.0235326 0.4702464 0.9240918
+#&gt; [5,] 0.8186769 0.3277147 0.7059983</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
