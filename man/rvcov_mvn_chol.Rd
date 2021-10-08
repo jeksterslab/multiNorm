@@ -77,6 +77,7 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{hess_l_mvn}()},
 \code{\link{l_mvn_generic}()},
 \code{\link{l_mvn}()},
+\code{\link{mvn_theta_helper}()},
 \code{\link{negl_mvn}()},
 \code{\link{rmeans_mvn_chol_of_theta}()},
 \code{\link{rmeans_mvn_chol}()},
@@ -85,8 +86,7 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rmvn_chol_of_vechsrhocap}()},
 \code{\link{rmvn_chol}()},
 \code{\link{rvcov_wishart_of_vechsigmacap}()},
-\code{\link{rvcov_wishart}()},
-\code{\link{theta_helper}()}
+\code{\link{rvcov_wishart}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -4,7 +4,7 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @inheritParams theta_helper
+#' @inheritParams mvn_theta_helper
 #' @inheritParams rmvn_chol
 #'
 #' @returns A matrix (`data_frame = FALSE`) or data.frame (`data_frame = TRUE`).
@@ -21,7 +21,7 @@ rmvn_chol_of_theta <- function(n,
                                x,
                                varnames = NULL,
                                data_frame = FALSE) {
-  theta <- theta_helper(x)
+  theta <- mvn_theta_helper(x)
   return(
     rmvn_chol(
       n = n,

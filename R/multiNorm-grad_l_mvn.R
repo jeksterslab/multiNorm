@@ -43,7 +43,7 @@
 #' @keywords multiNorm
 grad_l_mvn <- function(x,
                        theta) {
-  theta <- theta_helper(theta)
+  theta <- mvn_theta_helper(theta)
   return(
     grad_l_mvn_generic(
       x = x,
@@ -52,4 +52,3 @@ grad_l_mvn <- function(x,
     )
   )
 }
-

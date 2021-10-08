@@ -30,7 +30,7 @@ rmeans_mvn_chol_of_theta <- function(rcap,
                                      n,
                                      varnames = NULL,
                                      list = FALSE) {
-  theta <- theta_helper(x)
+  theta <- mvn_theta_helper(x)
   return(
     rmeans_mvn_chol(
       rcap = rcap,
