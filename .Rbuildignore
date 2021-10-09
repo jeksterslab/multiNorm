@@ -28,6 +28,3 @@
 ^docs$
 ^latex$
 ^latexmkrc$
-^multiNorm\.Rcheck$
-^multiNorm.*\.tar\.gz$
-^multiNorm.*\.tgz$

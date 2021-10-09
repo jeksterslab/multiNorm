@@ -1,0 +1,14 @@
+pandoc: 2.11.4
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  multiNorm: multiNorm.html
+  rmeans_mvn_chol: rmeans_mvn_chol.html
+  rmvn_chol: rmvn_chol.html
+  rvcov_wishart: rvcov_wishart.html
+  session: session.html
+last_built: 2021-10-09T07:28Z
+urls:
+  reference: https://github.com/jeksterslab/multiNorm//reference
+  article: https://github.com/jeksterslab/multiNorm//articles
+
