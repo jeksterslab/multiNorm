@@ -1,18 +1,10 @@
 \begin{equation}
-    f
+    L
     \left(
-    \mathbf{x}
-    =
-    \left\{
-    x_1,
-    \dots,
-    x_j,
-    \dots,
-    x_k
-    \right\}^{\prime}
-    \mid
     \boldsymbol{\mu},
     \boldsymbol{\Sigma}
+    \mid
+    \mathbf{x}_{i}
     \right)
     =
     \left(
@@ -27,15 +19,16 @@
     -
     \frac{1}{2}
     \left(
-      \mathbf{x}
+      \mathbf{x}_{i}
       -
       \boldsymbol{\mu}
     \right)^{\prime}
     \boldsymbol{\Sigma}^{-1}
     \left(
-      \mathbf{x}
+      \mathbf{x}_{i}
       -
       \boldsymbol{\mu}
     \right)
     \right\}
+    \label{eq:multiNorm-mvn-likelihood-i}
 \end{equation}

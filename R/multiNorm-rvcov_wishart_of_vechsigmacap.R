@@ -25,7 +25,7 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm random wishart
 rvcov_wishart_of_vechsigmacap <- function(rcap,
                                           x,
                                           df,

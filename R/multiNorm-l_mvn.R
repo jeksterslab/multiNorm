@@ -1,8 +1,7 @@
 #' Log of the Likelihood of the Multivariate Normal Distribution
 #'
 #' Calculates the log of the likelihood function
-#' of the multivariate normal distribution
-#' for the ith observation.
+#' of the multivariate normal distribution.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -21,11 +20,12 @@
 #' }
 #' @param x Numeric vector of length `k`.
 #'   The ith vector of observations.
+#'   Or numeric matrix of size `n` by `k`.
 #'
 #' @returns A vector.
 #'
 #' @examples
-#' n <- 5
+#' n <- 100
 #' mu <- c(0, 0)
 #' sigmacap <- matrix(
 #'   data = c(
@@ -33,30 +33,28 @@
 #'   ),
 #'   nrow = 2
 #' )
-#'
-#' xcap <- as.data.frame(
-#'   t(
-#'     rmvn_chol(
-#'       n = n,
-#'       mu = mu,
-#'       sigmacap = sigmacap
-#'     )
-#'   )
-#' )
-#'
 #' theta <- c(
 #'   mu,
-#'   vech(sigmacap)
+#'   linearAlgebra::vech(sigmacap)
+#' )
+#' xcap <- rmvn_chol(
+#'   n = n,
+#'   mu = mu,
+#'   sigmacap = sigmacap
 #' )
 #'
-#' lapply(
-#'   X = xcap,
-#'   FUN = l_mvn,
+#' l_mvn(
+#'   x = xcap[1, ],
+#'   theta = theta
+#' )
+#'
+#' l_mvn(
+#'   x = xcap,
 #'   theta = theta
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm likelihood
 l_mvn <- function(theta,
                   x) {
   theta <- mvn_theta_helper(theta)

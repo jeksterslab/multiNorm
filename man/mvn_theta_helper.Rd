@@ -51,4 +51,5 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rvcov_wishart}()}
 }
 \concept{Multivariate Normal Distribution Functions}
+\keyword{helper}
 \keyword{multiNorm}

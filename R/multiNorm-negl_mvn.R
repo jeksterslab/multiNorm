@@ -1,8 +1,7 @@
 #' Negative Log of the Likelihood of the Multivariate Normal Distribution
 #'
 #' Calculates the negative log of the likelihood function
-#' of the multivariate normal distribution
-#' for the ith observation.
+#' of the multivariate normal distribution.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -32,7 +31,7 @@
 #'
 #' theta <- c(
 #'   mu,
-#'   vech(sigmacap)
+#'   linearAlgebra::vech(sigmacap)
 #' )
 #'
 #' lapply(
@@ -42,7 +41,7 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm likelihood
 negl_mvn <- function(theta,
                      x) {
   return(

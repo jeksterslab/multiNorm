@@ -30,7 +30,7 @@
 #'
 #' theta <- c(
 #'   mu,
-#'   vech(sigmacap)
+#'   linearAlgebra::vech(sigmacap)
 #' )
 #'
 #' lapply(
@@ -40,7 +40,7 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm derivatives
 hess_l_mvn <- function(x,
                        theta) {
   theta <- mvn_theta_helper(theta)

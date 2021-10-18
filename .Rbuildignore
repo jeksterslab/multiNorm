@@ -28,3 +28,4 @@
 ^docs$
 ^latex$
 ^latexmkrc$
+^R_dependencies$

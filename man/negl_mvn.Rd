@@ -22,15 +22,15 @@ Parameter vector
 }}
 
 \item{x}{Numeric vector of length \code{k}.
-The ith vector of observations.}
+The ith vector of observations.
+Or numeric matrix of size \code{n} by \code{k}.}
 }
 \value{
 A vector.
 }
 \description{
 Calculates the negative log of the likelihood function
-of the multivariate normal distribution
-for the ith observation.
+of the multivariate normal distribution.
 }
 \examples{
 n <- 5
@@ -54,7 +54,7 @@ xcap <- as.data.frame(
 
 theta <- c(
   mu,
-  vech(sigmacap)
+  linearAlgebra::vech(sigmacap)
 )
 
 lapply(
@@ -86,4 +86,5 @@ Other Multivariate Normal Distribution Functions:
 Ivan Jacob Agaloos Pesigan
 }
 \concept{Multivariate Normal Distribution Functions}
+\keyword{likelihood}
 \keyword{multiNorm}

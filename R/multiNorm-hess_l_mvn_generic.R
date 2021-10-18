@@ -14,6 +14,9 @@
 #'   Parameter.
 #'   Covariance matrix
 #'   \eqn{\boldsymbol{\Sigma}}.
+#' @param qcap Numeric matrix.
+#'   Inverse of the covariance matrix
+#'   \eqn{\mathbf{Q}}.
 #'
 #' @returns A matrix.
 #'
@@ -45,10 +48,11 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm derivatives
 hess_l_mvn_generic <- function(x,
                                mu,
-                               sigmacap) {
+                               sigmacap,
+                               qcap = NULL) {
   stopifnot(
     is.vector(x),
     is.vector(mu),
@@ -59,15 +63,18 @@ hess_l_mvn_generic <- function(x,
   q <- k + (k * (k + 1) / 2)
   if (k == 1) {
     sigmacap <- as.vector(sigmacap)
-    wrt_mu_mu <- -1 / sigmacap
-    wrt_mu_sigmacap <- -1 * (d / sigmacap^2)
+    if (is.null(qcap)) {
+      qcap <- 1 / sigmacap
+    }
+    wrt_mu_mu <- -1 * qcap # -1 / sigmacap
+    wrt_mu_sigmacap <- -1 * d * qcap^2 # -1 * (d / sigmacap^2)
     # wrt_sigmacap_sigmacap <- (
     #  1 / (2 * sigmacap^2)
     # ) + (
     #  d^2 / sigmacap^2
     # )
     wrt_sigmacap_sigmacap <- -1 * (
-      (d^2 / sigmacap^3) - (0.5 / sigmacap^2)
+      (d^2 * qcap^3) - (0.5 * qcap^2) # (d^2 / sigmacap^3) - (0.5 / sigmacap^2)
     )
     hcap <- matrix(
       data = 0,
@@ -79,7 +86,9 @@ hess_l_mvn_generic <- function(x,
     hcap[2, 1] <- wrt_mu_sigmacap
     hcap[2, 2] <- wrt_sigmacap_sigmacap
   } else {
-    qcap <- chol2inv(chol(sigmacap))
+    if (is.null(qcap)) {
+      qcap <- chol2inv(chol(sigmacap))
+    }
     dcap <- dcap(dim(qcap)[1])
     tdcap <- t(dcap)
     wrt_mu_mu <- -1 * qcap

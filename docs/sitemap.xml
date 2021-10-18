@@ -4,12 +4,6 @@
     <loc>https://github.com/jeksterslab/multiNorm//index.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/multiNorm//reference/dcap.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/multiNorm//reference/diag_of_vech.html</loc>
-  </url>
-  <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/grad_l_mvn.html</loc>
   </url>
   <url>
@@ -20,9 +14,6 @@
   </url>
   <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/hess_l_mvn_generic.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/multiNorm//reference/kcap.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/multiNorm//reference/l_mvn.html</loc>
@@ -67,34 +58,7 @@
     <loc>https://github.com/jeksterslab/multiNorm//reference/rvcov_wishart_of_vechsigmacap.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/multiNorm//reference/sym_of_vech.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/multiNorm//reference/sym_of_vechs.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/multiNorm//reference/vech.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/multiNorm//reference/vechnames.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/multiNorm//reference/vechs.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/multiNorm//reference/vechsnames.html</loc>
-  </url>
-  <url>
     <loc>https://github.com/jeksterslab/multiNorm//articles/multiNorm.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/multiNorm//articles/rmeans_mvn_chol.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/multiNorm//articles/rmvn_chol.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/multiNorm//articles/rvcov_wishart.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/multiNorm//articles/session.html</loc>

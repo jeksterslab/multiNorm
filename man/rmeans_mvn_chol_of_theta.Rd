@@ -79,3 +79,5 @@ Ivan Jacob Agaloos Pesigan
 }
 \concept{Multivariate Normal Distribution Functions}
 \keyword{multiNorm}
+\keyword{mvn}
+\keyword{random}

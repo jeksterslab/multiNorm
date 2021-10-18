@@ -33,9 +33,11 @@ obj_i <- lapply(
   X = ls(),
   FUN = function(x) eval(parse(text = x))
 )
-lapply(
-  X = obj_i,
-  FUN = class
+unique(
+  lapply(
+    X = obj_i,
+    FUN = class
+  )
 )
 @
 

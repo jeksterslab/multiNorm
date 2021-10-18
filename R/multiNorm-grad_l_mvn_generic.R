@@ -14,6 +14,9 @@
 #'   Parameter.
 #'   Covariance matrix
 #'   \eqn{\boldsymbol{\Sigma}}.
+#' @param qcap Numeric matrix.
+#'   Inverse of the covariance matrix
+#'   \eqn{\mathbf{Q}}.
 #'
 #' @returns A vector.
 #'
@@ -45,29 +48,35 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm derivatives
 grad_l_mvn_generic <- function(x,
                                mu,
-                               sigmacap) {
+                               sigmacap,
+                               qcap = NULL) {
   stopifnot(
-    is.vector(x),
+    is.vector(x) || is.matrix(x) || is.data.frame(x),
     is.vector(mu),
     is.matrix(sigmacap)
   )
   d <- x - mu
-  k <- length(as.vector(d))
+  k <- dim(sigmacap)[1]
   if (k == 1) {
     sigmacap <- as.vector(sigmacap)
-    wrt_mu <- d / sigmacap
+    if (is.null(qcap)) {
+      qcap <- 1 / sigmacap
+    }
+    wrt_mu <- d * qcap # d / sigmacap
     wrt_sigmacap <- -1 * (
       (
-        0.5 / sigmacap
+        0.5 * qcap # 0.5 / sigmacap
       ) - (
-        (0.5 * d^2) / sigmacap^2
+        (0.5 * d^2) * qcap^2 # (0.5 * d^2) / sigmacap^2
       )
     )
   } else {
-    qcap <- chol2inv(chol(sigmacap))
+    if (is.null(qcap)) {
+      qcap <- chol2inv(chol(sigmacap))
+    }
     wrt_mu <- as.vector(qcap %*% d)
     # D' vec(d(l)/d(sigmacap))
     wrt_sigmacap <- as.vector(

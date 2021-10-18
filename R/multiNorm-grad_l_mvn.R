@@ -1,4 +1,4 @@
-#' Gradient Vector of the Multivariate Normal Distribution - Generic
+#' Gradient Vector of the Multivariate Normal Distribution
 #'
 #' Calculates gradient vector of the log of the likelihood function
 #' of the multivariate normal distribution
@@ -30,7 +30,7 @@
 #'
 #' theta <- c(
 #'   mu,
-#'   vech(sigmacap)
+#'   linearAlgebra::vech(sigmacap)
 #' )
 #'
 #' lapply(
@@ -40,7 +40,7 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm derivatives
 grad_l_mvn <- function(x,
                        theta) {
   theta <- mvn_theta_helper(theta)

@@ -16,7 +16,7 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm random mvn
 rmvn_chol_of_theta <- function(n,
                                x,
                                varnames = NULL,

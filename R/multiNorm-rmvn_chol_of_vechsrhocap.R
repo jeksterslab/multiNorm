@@ -25,7 +25,7 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm random mvn
 rmvn_chol_of_vechsrhocap <- function(n,
                                      x,
                                      varnames = NULL,

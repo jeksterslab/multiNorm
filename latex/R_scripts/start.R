@@ -2,6 +2,20 @@
 root <- rprojroot::is_rstudio_project
 # set environment variables
 Sys.setenv(R_LIBS_USER = ".library")
+# source all scripts in R_dependencies/
+R_dependencies_folder <- root$find_file(
+  "R_dependencies"
+)
+script_files <- list.files(
+  R_dependencies_folder,
+  pattern = "\\.R$",
+  full.names = TRUE,
+  all.files = TRUE
+)
+for (i in script_files) {
+  source(i)
+}
+rm(i, script_files, R_dependencies_folder)
 # source all scripts in R/
 R_folder <- root$find_file(
   "R"

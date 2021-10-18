@@ -100,15 +100,6 @@ for the ith observation." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/rmeans_mvn_chol.html">Generating Sample Mean Vectors from the Multivariate Normal Distribution Using the Cholesky Decomposition</a>
-    </li>
-    <li>
-      <a href="../articles/rmvn_chol.html">Generating Multivariate Normal Data Using the Cholesky Decomposition</a>
-    </li>
-    <li>
-      <a href="../articles/rvcov_wishart.html">Generating Sample Covariance Matrices from the Wishart Distribution</a>
-    </li>
-    <li>
       <a href="../articles/session.html">multiNorm: Session</a>
     </li>
   </ul>
@@ -143,7 +134,7 @@ of the multivariate normal distribution
 for the ith observation.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>hess_l_mvn_generic</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>mu</span>, <span class='va'>sigmacap</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>hess_l_mvn_generic</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>mu</span>, <span class='va'>sigmacap</span>, qcap <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,6 +157,12 @@ Mean vector
 Parameter.
 Covariance matrix
 \(\boldsymbol{\Sigma}\).</p></td>
+    </tr>
+    <tr>
+      <th>qcap</th>
+      <td><p>Numeric matrix.
+Inverse of the covariance matrix
+\(\mathbf{Q}\).</p></td>
     </tr>
     </table>
 

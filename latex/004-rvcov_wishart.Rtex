@@ -20,17 +20,23 @@ source(
 )
 @
 
+\section{Multivariate Normal Distribution}
+
 The multivariate normal distribution is given by
 
 \input{latex/equations/multiNorm-mvn}
 
 \input{latex/equations/multiNorm-mvn-where}
 
+\section{Wishart Distribution}
+
 The Wishart distribution is given by
 
 \input{latex/equations/multiNorm-wishart}
 
 \input{latex/equations/multiNorm-wishart-where}
+
+\section{Distribution of Sample Covariances}
 
 When data is randomly sampled from the multivariate normal distribution,
 the distribution of the unbiased sample covariance matrix $S_{n - 1}$,
@@ -44,82 +50,216 @@ Sample covariances can be generated from the Wishart distribution using
 
 \input{latex/equations/multiNorm-vcov_inv_wishart}
 
-<<>>=
-set.seed(42)
+\newpage
+
+\section{Examples}
+
+\subsection{Parameters}
+
+<<echo = FALSE>>=
 n_i <- 1000
-df_i <- n_i - 1
-rcap_i <- 10
-k_i <- sample(x = 2:10, size = 1)
-sigmacap_i <- toeplitz((k_i:1) / k_i) 
-vech_i <- vech(sigmacap_i)
-sigmacap_i
-vech_i
-df_i
+nu_i <- n_i - 1
+k_i <- sample(x = 2:5, size = 1)
+mu_i <- rep(x = 0, times = k_i)
+sigma_i <- diag(rep(x = 0.5, times = k_i))
+sigmacap_i <- sigma_i %*% toeplitz((k_i:1) / k_i) %*% sigma_i
+vechsigmacap_i <- vech(sigmacap_i)
+rhocap_i <- stats::cov2cor(sigmacap_i)
+vechsrhocap_i <- vechs(rhocap_i)
+theta_i <- c(
+  mu_i,
+  vechsigmacap_i
+)
+rcap_i <- 20
 @
+
+<<echo = FALSE>>=
+variable <- c(
+  "\\texttt{n\\_i}",
+  "\\texttt{nu\\_i}",
+  "\\texttt{k\\_i}",
+  "\\texttt{mu\\_i}",
+  "\\texttt{sigmacap\\_i}",
+  "\\texttt{vechsigmacap\\_i}",
+  "\\texttt{rhocap\\_i}",
+  "\\texttt{vechsrhocap\\_i}",
+  "\\texttt{theta\\_i}",
+  "\\texttt{rcap\\_i}",
+  "\\texttt{xcap\\_i}"
+)
+symbol <- c(
+  "$n$",
+  "$\\nu$",
+  "$k$",
+  "$\\boldsymbol{\\mu}$",
+  "$\\boldsymbol{\\Sigma}$",
+  "$\\mathrm{vech} \\left( \\boldsymbol{\\Sigma} \\right)$",
+  "$\\mathbf{P}$",
+  "$\\mathrm{vechs} \\left( \\mathbf{P} \\right)$",
+  "$\\boldsymbol{\\theta}$",
+  "$R$",
+  "$\\mathbf{X}$"
+)
+description <- c(
+  paste("sample size", paste0("(", n_i, ")")),
+  paste("degrees of freedom", paste0("(", n_i, " - 1 = ", nu_i, ")")),
+  paste("number of random variables", paste0("(", k_i, ")")),
+  "population mean vector",
+  "population variance-covariance matrix",
+  "half-vectorization of the population variance-covariance matrix",
+  "population correlation matrix",
+  "strict half-vectorization of the population correlation matrix",
+  "parameter vector $\\left\\{ \\boldsymbol{\\mu}, \\mathrm{vech} \\left( \\boldsymbol{\\Sigma} \\right) \\right\\}^{\\prime}$",
+  paste("replications", paste0("(", rcap_i, ")")),
+  "sample data"
+)
+knitr::kable(
+  cbind(
+    variable,
+    symbol,
+    description
+  ),
+  col.names = c(
+    "Variable",
+    "Symbol",
+    "Description"
+  ),
+  escape = FALSE,
+  caption = "Variables",
+  booktabs = TRUE
+)
+@
+
+\subsubsection{$\boldsymbol{\mu}$}
+
+<<echo = FALSE>>=
+knitr::kable(
+  mu_i,
+  booktabs = TRUE,
+  col.names = NULL
+)
+@
+
+\subsubsection{$\boldsymbol{\Sigma}$}
+
+<<echo = FALSE>>=
+knitr::kable(
+  sigmacap_i,
+  booktabs = TRUE,
+  col.names = NULL
+)
+@
+
+\subsubsection{$\mathrm{vech} \left( \boldsymbol{\Sigma} \right)$}
+
+<<echo = FALSE>>=
+knitr::kable(
+  vechsigmacap_i,
+  booktabs = TRUE,
+  col.names = NULL
+)
+@
+
+\subsubsection{$\mathbf{P}$}
+
+<<echo = FALSE>>=
+knitr::kable(
+  rhocap_i,
+  booktabs = TRUE,
+  col.names = NULL
+)
+@
+
+\subsubsection{$\mathrm{vechs} \left( \mathbf{P} \right)$}
+
+<<echo = FALSE>>=
+knitr::kable(
+  vechsrhocap_i,
+  booktabs = TRUE,
+  col.names = NULL
+)
+@
+
+\subsubsection{$\boldsymbol{\theta}$}
+
+<<echo = FALSE>>=
+knitr::kable(
+  theta_i,
+  booktabs = TRUE,
+  col.names = NULL
+)
+@
+
+\newpage
 
 \section{rvcov\_wishart}
 
 <<>>=
-data_i <- rvcov_wishart(
+xcap_i <- rvcov_wishart(
   rcap = rcap_i,
   sigmacap = sigmacap_i,
-  df = df_i,
+  df = nu_i,
   list = TRUE
 )
-data_i
+xcap_i
 @
 
 <<>>=
-data_i <- rvcov_wishart(
+xcap_i <- rvcov_wishart(
   rcap = rcap_i,
   sigmacap = sigmacap_i,
-  df = df_i,
+  df = nu_i,
   list = FALSE,
   vec = TRUE
 )
-data_i
+xcap_i
 @
 
 <<>>=
-data_i <- rvcov_wishart(
+xcap_i <- rvcov_wishart(
   rcap = rcap_i,
   sigmacap = sigmacap_i,
-  df = df_i,
+  df = nu_i,
   list = FALSE,
   vec = FALSE
 )
-data_i
+xcap_i
 @
 
 \section{rvcov\_wishart\_of\_vechsigmacap}
 
 <<>>=
-data_i <- rvcov_wishart_of_vechsigmacap(
+xcap_i <- rvcov_wishart_of_vechsigmacap(
   rcap = rcap_i,
-  x = vech_i,
-  df = df_i
+  x = vechsigmacap_i,
+  df = nu_i
 )
-data_i
+xcap_i
 @
 
 <<>>=
-data_i <- rvcov_wishart_of_vechsigmacap(
+xcap_i <- rvcov_wishart_of_vechsigmacap(
   rcap = rcap_i,
-  x = vech_i,
-  df = df_i
+  x = vechsigmacap_i,
+  df = nu_i
 )
-data_i
+xcap_i
 @
 
 <<echo = FALSE>>=
 rm(
-  data_i,
-  df_i,
-  k_i,
   n_i,
-  rcap_i,
+  nu_i,
+  k_i,
+  mu_i,
+  sigma_i,
   sigmacap_i,
-  vech_i
+  vechsigmacap_i,
+  rhocap_i,
+  vechsrhocap_i,
+  theta_i,
+  rcap_i,
+  xcap_i
 )
 @
 

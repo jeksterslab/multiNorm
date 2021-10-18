@@ -8,6 +8,21 @@ reference:
 - title: Multivariate Normal Distribution Functions
   contents:
   - has_concept("Multivariate Normal Distribution Functions")
-- title: Linear Algebra Functions
+- title: Random Number Generation Functions
   contents:
-  - has_concept("Linear Algebra Functions")
+  - has_keyword("random")
+- title: MVN Distribution Functions
+  contents:
+  - has_keyword("mvn")
+- title: Wishart Distribution Functions
+  contents:
+  - has_keyword("wishart")
+- title: Likelihood Functions
+  contents:
+  - has_keyword("likelihood")
+- title: Derivatives Functions
+  contents:
+  - has_keyword("derivatives")
+- title: Helper Functions
+  contents:
+  - has_keyword("helper")

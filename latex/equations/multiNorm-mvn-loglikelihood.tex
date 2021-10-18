@@ -4,24 +4,26 @@
     \boldsymbol{\mu},
     \boldsymbol{\Sigma}
     \mid
-    \mathbf{x}
+    \mathbf{X}
     \right)
     =
-    -\frac{nk}{2}
+    -\frac{1}{2}
+    \left[
+    nk
     \log
     \left(
     2
     \pi
     \right)
-    -\frac{n}{2}
+    +
+    n
     \log
     \left(
     \left|
     \boldsymbol{\Sigma}
     \right|
     \right)
-    -
-    \frac{1}{2}
+    +
     \sum_{i = 1}^{n}
     \left(
       \mathbf{x}_{i}
@@ -34,5 +36,6 @@
       -
       \boldsymbol{\mu}
     \right)
+    \right]
     \label{eq:multiNorm-mvn-loglikelihood}
 \end{equation}

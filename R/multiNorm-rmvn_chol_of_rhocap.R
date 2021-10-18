@@ -26,7 +26,7 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm random mvn
 rmvn_chol_of_rhocap <- function(n,
                                 x,
                                 varnames = NULL,

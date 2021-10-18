@@ -1,0 +1,247 @@
+\documentclass{article}
+
+\input{latex/preamble/preamble}
+
+\title{Log of the Likelihood of the Multivariate Normal Distribution}
+\author{Ivan Jacob Agaloos Pesigan}
+
+\begin{document}
+
+\maketitle
+
+<<echo=FALSE>>=
+root <- rprojroot::is_rstudio_project
+source(
+  root$find_file(
+    "latex",
+    "R_scripts",
+    "start.R"
+  )
+)
+@
+
+\section{Multivariate Normal Distribution}
+
+The multivariate normal distribution is given by
+
+\input{latex/equations/multiNorm-mvn}
+
+\input{latex/equations/multiNorm-mvn-where}
+
+\section{Probability Density Function}
+
+The probability density function
+of the multivariate normal distribution is given by
+
+\input{latex/equations/multiNorm-mvn-pdf}
+
+\input{latex/equations/multiNorm-mahalanobis}
+
+$\Delta^{2}$ is the squared Mahalanobis distance.
+
+\section{Likelihood}
+
+The likelihood of an observed vector $\mathbf{x}_{i}$ is given by
+
+\input{latex/equations/multiNorm-mvn-likelihood-i}
+
+For independent and identically distributed random variables
+
+\input{latex/equations/multiNorm-mvn-likelihood}
+
+\input{latex/equations/multiNorm-mvn-likelihood-where}
+
+The log of the likelihood of an observed vector $\mathbf{x}_{i}$ is given by
+
+\input{latex/equations/multiNorm-mvn-loglikelihood-i}
+
+For independent and identically distributed random variables
+
+\input{latex/equations/multiNorm-mvn-loglikelihood}
+
+\newpage
+
+\section{Examples}
+
+<<echo=FALSE>>=
+variable_i <- c(
+  "xcap\\_i",
+  "mu\\_i",
+  "sigmacap\\_i",
+  "theta\\_i"
+)
+symbol_i <- c(
+  "$\\mathbf{X}$",
+  "$\\hat{\\boldsymbol{\\mu}}$",
+  "$\\hat{\\boldsymbol{\\Sigma}}$",
+  "$\\hat{\\boldsymbol{\\theta}}$"
+)
+description_i <- c(
+  "sample data matrix",
+  "MLE of the mean",
+  "MLE of the covariance",
+  "parameter vector $\\left\\{\\hat{\\boldsymbol{\\mu}}, \\mathrm{vech} \\left( \\hat{\\boldsymbol{\\Sigma}} \\right)\\right\\}^{\\prime}$"
+)
+knitr::kable(
+  cbind(
+   variable_i,
+   symbol_i,
+   description_i
+  ),
+  format = "latex",
+  col.names = c(
+    "Variable",
+    "Symbol",
+    "Description"
+  ),
+  escape = FALSE,
+  booktabs = TRUE,
+  caption = "Variables"
+)
+@
+
+<<echo = FALSE>>=
+set.seed(42)
+n_i <- 25
+xcap_i <- rmvn_chol(
+  n = n_i,
+  mu = c(0, 0),
+  sigmacap = matrix(
+    data = c(1, 0.5, 0.5, 1),
+    nrow = 2,
+    ncol = 2
+  )
+)
+mu_i <- colMeans(xcap_i)
+sigmacap_i <- (
+  (n_i - 1) / n_i
+) * stats::cov(xcap_i)
+theta_i <- c(
+  mu_i,
+  vech(sigmacap_i)
+)
+@
+
+Let the maximum likelihood estimator of the mean be
+
+\begin{equation}
+    \hat{\mu}_{X}
+    =
+    \frac{1}{n}
+    \sum_{i = 1}^{n}
+    x_i
+\end{equation}
+
+Let the maximum likelihood estimator of the variance be
+
+\begin{equation}
+    \hat{\sigma}^{2}_{X}
+    =
+    \frac{1}{n}
+    \sum_{i = 1}^{n}
+    \left(
+    x_i
+    -
+    \hat{\mu}_{X}
+    \right)^2
+\end{equation}
+
+Let the maximum likelihood estimator of the covariance be
+
+\begin{equation}
+    \hat{\sigma}_{X, Y}
+    =
+    \frac{1}{n}
+    \sum_{i = 1}^{n}
+    \left(
+    x_i
+    -
+    \hat{\mu}_{X}
+    \right)
+    \left(
+    y_i
+    -
+    \hat{\mu}_{Y}
+    \right)
+\end{equation}
+
+\newpage
+
+\begin{equation}
+    \hat{\boldsymbol{\mu}}
+    =
+    \left(
+    \begin{array}{c}
+         \Sexpr{mu_i[1]} \\
+         \Sexpr{mu_i[2]}
+    \end{array}
+    \right)
+\end{equation}
+
+\begin{equation}
+    \hat{\boldsymbol{\Sigma}}
+    =
+    \left(
+    \begin{array}{cc}
+         \Sexpr{sigmacap_i[1, 1]} & \Sexpr{sigmacap_i[1, 2]} \\
+         \Sexpr{sigmacap_i[2, 1]} & \Sexpr{sigmacap_i[2, 2]}
+    \end{array}
+    \right)
+\end{equation}
+
+\begin{equation}
+    \hat{\boldsymbol{\theta}}
+    =
+    \left(
+    \begin{array}{c}
+         \Sexpr{mu_i[1]} \\
+         \Sexpr{mu_i[2]} \\
+         \Sexpr{sigmacap_i[1, 1]} \\
+         \Sexpr{sigmacap_i[2, 1]} \\
+         \Sexpr{sigmacap_i[2, 2]}
+    \end{array}
+    \right)
+\end{equation}
+
+<<echo=FALSE>>=
+knitr::kable(
+  xcap_i,
+  format = "latex",
+  col.names = c("$x_1$", "$x_2$"),
+  escape = FALSE,
+  booktabs = TRUE,
+  caption = "Sample data (\\texttt{xcap\\_i})"
+)
+@
+
+\newpage
+
+Log of the likelihood for the first row of $\mathbf{X}$
+
+<<>>=
+l_mvn(
+  theta = theta_i,
+  x = xcap_i[1, ]
+)
+@
+
+Log of the likelihood for $\mathbf{X}$
+
+<<>>=
+l_mvn(
+  theta = theta_i,
+  x = xcap_i
+)
+@
+
+<<echo = FALSE>>=
+rm(
+  n_i,
+  mu_i,
+  sigmacap_i,
+  xcap_i,
+  theta_i
+)
+@
+
+\end{document}

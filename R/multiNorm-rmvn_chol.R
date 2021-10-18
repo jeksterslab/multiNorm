@@ -40,7 +40,7 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm random mvn
 rmvn_chol <- function(n,
                       mu,
                       sigmacap,

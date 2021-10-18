@@ -4,7 +4,7 @@
 \alias{grad_l_mvn_generic}
 \title{Gradient Vector of the Multivariate Normal Distribution - Generic}
 \usage{
-grad_l_mvn_generic(x, mu, sigmacap)
+grad_l_mvn_generic(x, mu, sigmacap, qcap = NULL)
 }
 \arguments{
 \item{x}{Numeric vector of length \code{k}.
@@ -19,6 +19,10 @@ Mean vector
 Parameter.
 Covariance matrix
 \eqn{\boldsymbol{\Sigma}}.}
+
+\item{qcap}{Numeric matrix.
+Inverse of the covariance matrix
+\eqn{\mathbf{Q}}.}
 }
 \value{
 A vector.
@@ -75,4 +79,5 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rvcov_wishart}()}
 }
 \concept{Multivariate Normal Distribution Functions}
+\keyword{derivatives}
 \keyword{multiNorm}

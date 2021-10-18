@@ -22,18 +22,18 @@ Parameter vector
 }}
 
 \item{x}{Numeric vector of length \code{k}.
-The ith vector of observations.}
+The ith vector of observations.
+Or numeric matrix of size \code{n} by \code{k}.}
 }
 \value{
 A vector.
 }
 \description{
 Calculates the log of the likelihood function
-of the multivariate normal distribution
-for the ith observation.
+of the multivariate normal distribution.
 }
 \examples{
-n <- 5
+n <- 100
 mu <- c(0, 0)
 sigmacap <- matrix(
   data = c(
@@ -41,25 +41,23 @@ sigmacap <- matrix(
   ),
   nrow = 2
 )
-
-xcap <- as.data.frame(
-  t(
-    rmvn_chol(
-      n = n,
-      mu = mu,
-      sigmacap = sigmacap
-    )
-  )
-)
-
 theta <- c(
   mu,
-  vech(sigmacap)
+  linearAlgebra::vech(sigmacap)
+)
+xcap <- rmvn_chol(
+  n = n,
+  mu = mu,
+  sigmacap = sigmacap
 )
 
-lapply(
-  X = xcap,
-  FUN = l_mvn,
+l_mvn(
+  x = xcap[1, ],
+  theta = theta
+)
+
+l_mvn(
+  x = xcap,
   theta = theta
 )
 }
@@ -86,4 +84,5 @@ Other Multivariate Normal Distribution Functions:
 Ivan Jacob Agaloos Pesigan
 }
 \concept{Multivariate Normal Distribution Functions}
+\keyword{likelihood}
 \keyword{multiNorm}

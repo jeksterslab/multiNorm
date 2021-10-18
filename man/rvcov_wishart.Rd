@@ -83,3 +83,5 @@ Ivan Jacob Agaloos Pesigan
 }
 \concept{Multivariate Normal Distribution Functions}
 \keyword{multiNorm}
+\keyword{random}
+\keyword{wishart}

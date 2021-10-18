@@ -20,7 +20,7 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm helper
 mvn_theta_helper <- function(x) {
   stopifnot(is.vector(x))
   q <- length(x)

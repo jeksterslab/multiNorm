@@ -13,3 +13,14 @@ for (i in seq_along(pkg)) {
     )
   }
 }
+pkg <- c(
+  "jeksterslab/linearAlgebra"
+)
+for (i in seq_along(pkg)) {
+  if (!(pkg[i] %in% installed)) {
+    remotes::install_github(
+      pkg[i],
+      lib = lib
+    )
+  }
+}

@@ -8,4 +8,5 @@
 #' @docType package
 #' @name multiNorm
 #' @keywords multiNorm package
+#' @import linearAlgebra
 NULL

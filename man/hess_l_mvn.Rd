@@ -8,7 +8,8 @@ hess_l_mvn(x, theta)
 }
 \arguments{
 \item{x}{Numeric vector of length \code{k}.
-The ith vector of observations.}
+The ith vector of observations.
+Or numeric matrix of size \code{n} by \code{k}.}
 
 \item{theta}{Numeric vector.
 Parameter vector
@@ -54,7 +55,7 @@ xcap <- as.data.frame(
 
 theta <- c(
   mu,
-  vech(sigmacap)
+  linearAlgebra::vech(sigmacap)
 )
 
 lapply(
@@ -83,4 +84,5 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{rvcov_wishart}()}
 }
 \concept{Multivariate Normal Distribution Functions}
+\keyword{derivatives}
 \keyword{multiNorm}

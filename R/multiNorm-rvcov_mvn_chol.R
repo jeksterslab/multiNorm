@@ -54,7 +54,7 @@
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
-#' @keywords multiNorm
+#' @keywords multiNorm random mvn
 rvcov_mvn_chol <- function(rcap,
                            sigmacap,
                            gammacap,
